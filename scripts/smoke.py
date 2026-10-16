@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Isolated Docker test: HTTP proxy, real WireGuard, SSH, flags and internet egress."""
 
-import ipaddress, json, os, pathlib, subprocess, sys, time, uuid
+import json, os, subprocess, time, uuid
 
 IMAGE = os.environ.get("CIB_DEMO_IMAGE", "cib-test-exercises:local")
 TOOLS = os.environ.get("CIB_TOOLS_IMAGE", "cib-test-exercises:tools")
@@ -45,8 +45,7 @@ def start(
         name,
         "--network",
         network,
-        "--ip",
-        ip,
+        *(["--ip", ip] if ip else []),
         *extra,
         *(["--entrypoint", entrypoint] if entrypoint else []),
         image,
@@ -68,12 +67,6 @@ def main():
     vpn = create_net("vpn", "10.128.7.0/24", "10.128.7.254")
     internet = create_net("internet", "10.192.7.0/24", "10.192.7.1")
     transport = create_net("transport", None, None, True)
-    transport_pool = ipaddress.ip_network(
-        json.loads(docker("network", "inspect", transport).stdout)[0]["IPAM"]["Config"][
-            0
-        ]["Subnet"]
-    )
-    gateway_ip, client_ip, proxy_ip = [str(transport_pool[i]) for i in [2, 3, 4]]
     app = start(
         "app",
         IMAGE,
@@ -100,11 +93,15 @@ def main():
         "10.128.7.1",
         extra=("--cap-add", "NET_ADMIN", "--sysctl", "net.ipv4.ip_forward=1"),
     )
-    docker("network", "connect", "--ip", gateway_ip, transport, gateway)
-    client = start(
-        "client", TOOLS, transport, client_ip, extra=("--cap-add", "NET_ADMIN")
-    )
-    proxy = start("proxy", TOOLS, transport, proxy_ip)
+    docker("network", "connect", transport, gateway)
+    gateway_ip = json.loads(docker("inspect", gateway).stdout)[0]["NetworkSettings"][
+        "Networks"
+    ][transport]["IPAddress"]
+    client = start("client", TOOLS, transport, None, extra=("--cap-add", "NET_ADMIN"))
+    proxy = start("proxy", TOOLS, transport, None)
+    proxy_ip = json.loads(docker("inspect", proxy).stdout)[0]["NetworkSettings"][
+        "Networks"
+    ][transport]["IPAddress"]
     docker("network", "connect", "--ip", "10.128.7.20", vpn, proxy)
     execute(
         app, "ip", "route", "add", "10.128.0.0/10", "via", "10.128.7.1", "dev", "eth1"
