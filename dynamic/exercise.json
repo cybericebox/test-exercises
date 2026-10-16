@@ -1,0 +1,344 @@
+{
+  "format": "cib-exercise/v1",
+  "exercise": {
+    "ID": "01b28c1b-7df2-5e5d-a77f-9ac0f47db0fa",
+    "Name": "Перевірка підключення: веб і SSH",
+    "Description": "Два нескладні завдання в одному середовищі: веб через проксі або VPN, SSH через VPN та вихід в інтернет.",
+    "Tags": [
+      "тестове",
+      "демонстрація"
+    ],
+    "Scope": 0,
+    "AccessLevel": 0
+  },
+  "versions": [
+    {
+      "ID": "2643d2ba-f843-58f5-8441-81edad4ceca7",
+      "ExerciseID": "01b28c1b-7df2-5e5d-a77f-9ac0f47db0fa",
+      "Status": "published",
+      "AdminNote": "Демонстраційний набір v1.0.0",
+      "Label": "",
+      "Variants": [
+        {
+          "id": "41bb58ea-24ac-54ad-bfa7-3372120df252",
+          "index": 1,
+          "note": "",
+          "tasks": [
+            {
+              "id": "206e8a3b-8083-582e-8a68-024bd42675b9",
+              "name": "Веб-підключення",
+              "difficulty": "elementary",
+              "flag": [
+                "template:ICE{web_[a-f0-9][a-f0-9][a-f0-9][a-f0-9][a-f0-9][a-f0-9][a-f0-9][a-f0-9][a-f0-9][a-f0-9][a-f0-9][a-f0-9][a-f0-9][a-f0-9][a-f0-9][a-f0-9][a-f0-9][a-f0-9][a-f0-9][a-f0-9][a-f0-9][a-f0-9][a-f0-9][a-f0-9]}"
+              ],
+              "linked_device_id": "00af82ca-1b2b-5d91-a05d-f396a1bdd0f8",
+              "device_flag_var": "WEB_FLAG",
+              "description": {
+                "root": {
+                  "type": "root",
+                  "version": 1,
+                  "direction": null,
+                  "format": "",
+                  "indent": 0,
+                  "children": [
+                    {
+                      "type": "paragraph",
+                      "version": 1,
+                      "direction": null,
+                      "format": "",
+                      "indent": 0,
+                      "textFormat": 0,
+                      "textStyle": "",
+                      "children": [
+                        {
+                          "type": "text",
+                          "version": 1,
+                          "text": "Запустіть середовище та відкрийте веб-сторінку через проксі: ",
+                          "detail": 0,
+                          "format": 0,
+                          "mode": "normal",
+                          "style": ""
+                        },
+                        {
+                          "type": "variable",
+                          "version": 1,
+                          "varName": "web_proxy",
+                          "formats": []
+                        },
+                        {
+                          "type": "text",
+                          "version": 1,
+                          "text": ". VPN для цього способу не потрібен.",
+                          "detail": 0,
+                          "format": 0,
+                          "mode": "normal",
+                          "style": ""
+                        }
+                      ]
+                    },
+                    {
+                      "type": "paragraph",
+                      "version": 1,
+                      "direction": null,
+                      "format": "",
+                      "indent": 0,
+                      "textFormat": 0,
+                      "textStyle": "",
+                      "children": [
+                        {
+                          "type": "text",
+                          "version": 1,
+                          "text": "Щоб перевірити VPN, підключіться за інструкцією у вікні VPN та відкрийте ту саму сторінку: ",
+                          "detail": 0,
+                          "format": 0,
+                          "mode": "normal",
+                          "style": ""
+                        },
+                        {
+                          "type": "variable",
+                          "version": 1,
+                          "varName": "web_vpn",
+                          "formats": []
+                        },
+                        {
+                          "type": "text",
+                          "version": 1,
+                          "text": ".",
+                          "detail": 0,
+                          "format": 0,
+                          "mode": "normal",
+                          "style": ""
+                        }
+                      ]
+                    },
+                    {
+                      "type": "paragraph",
+                      "version": 1,
+                      "direction": null,
+                      "format": "",
+                      "indent": 0,
+                      "textFormat": 0,
+                      "textStyle": "",
+                      "children": [
+                        {
+                          "type": "text",
+                          "version": 1,
+                          "text": "На сторінці натисніть «Показати веб-прапор» і надішліть отримане значення.",
+                          "detail": 0,
+                          "format": 0,
+                          "mode": "normal",
+                          "style": ""
+                        }
+                      ]
+                    }
+                  ]
+                }
+              },
+              "placeholders": [
+                {
+                  "key": "web_proxy",
+                  "kind": "external.link",
+                  "device_name": "welcome"
+                },
+                {
+                  "key": "web_vpn",
+                  "kind": "ip",
+                  "ip_reference": "vpn",
+                  "last_octet": 10,
+                  "as_link": true,
+                  "scheme": "http",
+                  "port": 8080
+                }
+              ]
+            },
+            {
+              "id": "0d2dd4b9-d631-541e-babe-bddb74541482",
+              "name": "Підключення через SSH",
+              "difficulty": "elementary",
+              "flag": [
+                "template:ICE{ssh_[a-f0-9][a-f0-9][a-f0-9][a-f0-9][a-f0-9][a-f0-9][a-f0-9][a-f0-9][a-f0-9][a-f0-9][a-f0-9][a-f0-9][a-f0-9][a-f0-9][a-f0-9][a-f0-9][a-f0-9][a-f0-9][a-f0-9][a-f0-9][a-f0-9][a-f0-9][a-f0-9][a-f0-9]}"
+              ],
+              "linked_device_id": "00af82ca-1b2b-5d91-a05d-f396a1bdd0f8",
+              "device_flag_var": "SSH_FLAG",
+              "description": {
+                "root": {
+                  "type": "root",
+                  "version": 1,
+                  "direction": null,
+                  "format": "",
+                  "indent": 0,
+                  "children": [
+                    {
+                      "type": "paragraph",
+                      "version": 1,
+                      "direction": null,
+                      "format": "",
+                      "indent": 0,
+                      "textFormat": 0,
+                      "textStyle": "",
+                      "children": [
+                        {
+                          "type": "text",
+                          "version": 1,
+                          "text": "Підключіться до VPN. У терміналі виконайте команду: ssh -p 2222 demo@",
+                          "detail": 0,
+                          "format": 0,
+                          "mode": "normal",
+                          "style": ""
+                        },
+                        {
+                          "type": "variable",
+                          "version": 1,
+                          "varName": "server_ip",
+                          "formats": []
+                        }
+                      ]
+                    },
+                    {
+                      "type": "paragraph",
+                      "version": 1,
+                      "direction": null,
+                      "format": "",
+                      "indent": 0,
+                      "textFormat": 0,
+                      "textStyle": "",
+                      "children": [
+                        {
+                          "type": "text",
+                          "version": 1,
+                          "text": "Пароль демонстраційного користувача: cybericebox. Після входу виконайте: cat flag.txt",
+                          "detail": 0,
+                          "format": 0,
+                          "mode": "normal",
+                          "style": ""
+                        }
+                      ]
+                    },
+                    {
+                      "type": "paragraph",
+                      "version": 1,
+                      "direction": null,
+                      "format": "",
+                      "indent": 0,
+                      "textFormat": 0,
+                      "textStyle": "",
+                      "children": [
+                        {
+                          "type": "text",
+                          "version": 1,
+                          "text": "Надішліть другий прапор як відповідь. Для перевірки виходу в інтернет можна виконати: curl -I https://example.com.",
+                          "detail": 0,
+                          "format": 0,
+                          "mode": "normal",
+                          "style": ""
+                        }
+                      ]
+                    }
+                  ]
+                }
+              },
+              "placeholders": [
+                {
+                  "key": "server_ip",
+                  "kind": "ip",
+                  "ip_reference": "vpn",
+                  "last_octet": 10
+                }
+              ]
+            }
+          ],
+          "topology": {
+            "vpn": {
+              "enabled": true,
+              "dhcp": false
+            },
+            "internet": {
+              "enabled": true,
+              "dhcp": false,
+              "dns": "1.1.1.1"
+            },
+            "devices": [
+              {
+                "id": "00af82ca-1b2b-5d91-a05d-f396a1bdd0f8",
+                "name": "welcome",
+                "type": "container",
+                "image": "cybericebox/test-exercises:v1.0.0",
+                "resource_preset": "micro",
+                "security_preset": "basic",
+                "interfaces": [
+                  {
+                    "name": "eth0",
+                    "ip": {
+                      "type": "static",
+                      "address_ref": {
+                        "network": "vpn",
+                        "host": 10
+                      },
+                      "routes": [
+                        {
+                          "dst": "10.128.0.0/10",
+                          "via_ref": {
+                            "network": "vpn",
+                            "host": 1
+                          }
+                        }
+                      ]
+                    }
+                  },
+                  {
+                    "name": "eth1",
+                    "ip": {
+                      "type": "static",
+                      "address_ref": {
+                        "network": "internet",
+                        "host": 10
+                      },
+                      "gateway_ref": {
+                        "network": "internet",
+                        "host": 1
+                      }
+                    }
+                  }
+                ],
+                "external": {
+                  "port": 8080,
+                  "protocol": "http"
+                }
+              }
+            ],
+            "connections": [
+              {
+                "endpoints": [
+                  {
+                    "kind": "vpn",
+                    "interface": "eth0"
+                  },
+                  {
+                    "kind": "device",
+                    "device_id": "00af82ca-1b2b-5d91-a05d-f396a1bdd0f8",
+                    "interface": "eth0"
+                  }
+                ]
+              },
+              {
+                "endpoints": [
+                  {
+                    "kind": "internet",
+                    "interface": "eth0"
+                  },
+                  {
+                    "kind": "device",
+                    "device_id": "00af82ca-1b2b-5d91-a05d-f396a1bdd0f8",
+                    "interface": "eth1"
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "CreatedAt": "2026-10-16T00:00:00Z",
+      "PublishedAt": "2026-10-16T00:00:00Z"
+    }
+  ]
+}

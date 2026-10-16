@@ -1,0 +1,481 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-10-16T16:52:57.371467+00:00",
+  "title": "Design System: Cyber ICE Box — Training Exercises",
+  "extensions": {
+    "colorMeta": {
+      "paper": {
+        "role": "neutral",
+        "displayName": "Paper",
+        "tonalRamp": [
+          "oklch(15.00% 0.00412 157.18)",
+          "oklch(26.43% 0.00412 157.18)",
+          "oklch(37.86% 0.00412 157.18)",
+          "oklch(49.29% 0.00412 157.18)",
+          "oklch(60.71% 0.00412 157.18)",
+          "oklch(72.14% 0.00412 157.18)",
+          "oklch(83.57% 0.00412 157.18)",
+          "oklch(95.00% 0.00412 157.18)"
+        ]
+      },
+      "ink": {
+        "role": "neutral",
+        "displayName": "Ink",
+        "tonalRamp": [
+          "oklch(15.00% 0.03875 230.09)",
+          "oklch(26.43% 0.03875 230.09)",
+          "oklch(37.86% 0.03875 230.09)",
+          "oklch(49.29% 0.03875 230.09)",
+          "oklch(60.71% 0.03875 230.09)",
+          "oklch(72.14% 0.03875 230.09)",
+          "oklch(83.57% 0.03875 230.09)",
+          "oklch(95.00% 0.03875 230.09)"
+        ]
+      },
+      "teal": {
+        "role": "secondary",
+        "displayName": "Teal",
+        "tonalRamp": [
+          "oklch(15.00% 0.08201 201.56)",
+          "oklch(26.43% 0.08201 201.56)",
+          "oklch(37.86% 0.08201 201.56)",
+          "oklch(49.29% 0.08201 201.56)",
+          "oklch(60.71% 0.08201 201.56)",
+          "oklch(72.14% 0.08201 201.56)",
+          "oklch(83.57% 0.08201 201.56)",
+          "oklch(95.00% 0.08201 201.56)"
+        ]
+      },
+      "focus-teal": {
+        "role": "secondary",
+        "displayName": "Focus Teal",
+        "tonalRamp": [
+          "oklch(15.00% 0.08074 202.83)",
+          "oklch(26.43% 0.08074 202.83)",
+          "oklch(37.86% 0.08074 202.83)",
+          "oklch(49.29% 0.08074 202.83)",
+          "oklch(60.71% 0.08074 202.83)",
+          "oklch(72.14% 0.08074 202.83)",
+          "oklch(83.57% 0.08074 202.83)",
+          "oklch(95.00% 0.08074 202.83)"
+        ]
+      },
+      "brand-teal": {
+        "role": "secondary",
+        "displayName": "Brand Teal",
+        "tonalRamp": [
+          "oklch(15.00% 0.08490 200.19)",
+          "oklch(26.43% 0.08490 200.19)",
+          "oklch(37.86% 0.08490 200.19)",
+          "oklch(49.29% 0.08490 200.19)",
+          "oklch(60.71% 0.08490 200.19)",
+          "oklch(72.14% 0.08490 200.19)",
+          "oklch(83.57% 0.08490 200.19)",
+          "oklch(95.00% 0.08490 200.19)"
+        ]
+      },
+      "diagram-teal": {
+        "role": "secondary",
+        "displayName": "Diagram Teal",
+        "tonalRamp": [
+          "oklch(15.00% 0.06744 206.17)",
+          "oklch(26.43% 0.06744 206.17)",
+          "oklch(37.86% 0.06744 206.17)",
+          "oklch(49.29% 0.06744 206.17)",
+          "oklch(60.71% 0.06744 206.17)",
+          "oklch(72.14% 0.06744 206.17)",
+          "oklch(83.57% 0.06744 206.17)",
+          "oklch(95.00% 0.06744 206.17)"
+        ]
+      },
+      "lime": {
+        "role": "primary",
+        "displayName": "Lime",
+        "tonalRamp": [
+          "oklch(15.00% 0.13828 120.92)",
+          "oklch(26.43% 0.13828 120.92)",
+          "oklch(37.86% 0.13828 120.92)",
+          "oklch(49.29% 0.13828 120.92)",
+          "oklch(60.71% 0.13828 120.92)",
+          "oklch(72.14% 0.13828 120.92)",
+          "oklch(83.57% 0.13828 120.92)",
+          "oklch(95.00% 0.13828 120.92)"
+        ]
+      },
+      "lime-hover": {
+        "role": "primary",
+        "displayName": "Lime Hover",
+        "tonalRamp": [
+          "oklch(15.00% 0.15438 123.14)",
+          "oklch(26.43% 0.15438 123.14)",
+          "oklch(37.86% 0.15438 123.14)",
+          "oklch(49.29% 0.15438 123.14)",
+          "oklch(60.71% 0.15438 123.14)",
+          "oklch(72.14% 0.15438 123.14)",
+          "oklch(83.57% 0.15438 123.14)",
+          "oklch(95.00% 0.15438 123.14)"
+        ]
+      },
+      "white": {
+        "role": "neutral",
+        "displayName": "White",
+        "tonalRamp": [
+          "oklch(15.00% 0.00000 89.88)",
+          "oklch(26.43% 0.00000 89.88)",
+          "oklch(37.86% 0.00000 89.88)",
+          "oklch(49.29% 0.00000 89.88)",
+          "oklch(60.71% 0.00000 89.88)",
+          "oklch(72.14% 0.00000 89.88)",
+          "oklch(83.57% 0.00000 89.88)",
+          "oklch(95.00% 0.00000 89.88)"
+        ]
+      },
+      "body-muted": {
+        "role": "neutral",
+        "displayName": "Body Muted",
+        "tonalRamp": [
+          "oklch(15.00% 0.03389 224.47)",
+          "oklch(26.43% 0.03389 224.47)",
+          "oklch(37.86% 0.03389 224.47)",
+          "oklch(49.29% 0.03389 224.47)",
+          "oklch(60.71% 0.03389 224.47)",
+          "oklch(72.14% 0.03389 224.47)",
+          "oklch(83.57% 0.03389 224.47)",
+          "oklch(95.00% 0.03389 224.47)"
+        ]
+      },
+      "meta-muted": {
+        "role": "neutral",
+        "displayName": "Meta Muted",
+        "tonalRamp": [
+          "oklch(15.00% 0.03197 213.41)",
+          "oklch(26.43% 0.03197 213.41)",
+          "oklch(37.86% 0.03197 213.41)",
+          "oklch(49.29% 0.03197 213.41)",
+          "oklch(60.71% 0.03197 213.41)",
+          "oklch(72.14% 0.03197 213.41)",
+          "oklch(83.57% 0.03197 213.41)",
+          "oklch(95.00% 0.03197 213.41)"
+        ]
+      },
+      "section-muted": {
+        "role": "neutral",
+        "displayName": "Section Muted",
+        "tonalRamp": [
+          "oklch(15.00% 0.02856 217.25)",
+          "oklch(26.43% 0.02856 217.25)",
+          "oklch(37.86% 0.02856 217.25)",
+          "oklch(49.29% 0.02856 217.25)",
+          "oklch(60.71% 0.02856 217.25)",
+          "oklch(72.14% 0.02856 217.25)",
+          "oklch(83.57% 0.02856 217.25)",
+          "oklch(95.00% 0.02856 217.25)"
+        ]
+      },
+      "on-dark-muted": {
+        "role": "neutral",
+        "displayName": "On Dark Muted",
+        "tonalRamp": [
+          "oklch(15.00% 0.01823 214.39)",
+          "oklch(26.43% 0.01823 214.39)",
+          "oklch(37.86% 0.01823 214.39)",
+          "oklch(49.29% 0.01823 214.39)",
+          "oklch(60.71% 0.01823 214.39)",
+          "oklch(72.14% 0.01823 214.39)",
+          "oklch(83.57% 0.01823 214.39)",
+          "oklch(95.00% 0.01823 214.39)"
+        ]
+      },
+      "section-number-muted": {
+        "role": "neutral",
+        "displayName": "Section Number Muted",
+        "tonalRamp": [
+          "oklch(15.00% 0.02916 211.76)",
+          "oklch(26.43% 0.02916 211.76)",
+          "oklch(37.86% 0.02916 211.76)",
+          "oklch(49.29% 0.02916 211.76)",
+          "oklch(60.71% 0.02916 211.76)",
+          "oklch(72.14% 0.02916 211.76)",
+          "oklch(83.57% 0.02916 211.76)",
+          "oklch(95.00% 0.02916 211.76)"
+        ]
+      },
+      "code-comment": {
+        "role": "neutral",
+        "displayName": "Code Comment",
+        "tonalRamp": [
+          "oklch(15.00% 0.02998 217.42)",
+          "oklch(26.43% 0.02998 217.42)",
+          "oklch(37.86% 0.02998 217.42)",
+          "oklch(49.29% 0.02998 217.42)",
+          "oklch(60.71% 0.02998 217.42)",
+          "oklch(72.14% 0.02998 217.42)",
+          "oklch(83.57% 0.02998 217.42)",
+          "oklch(95.00% 0.02998 217.42)"
+        ]
+      },
+      "divider": {
+        "role": "neutral",
+        "displayName": "Divider",
+        "tonalRamp": [
+          "oklch(15.00% 0.01203 170.23)",
+          "oklch(26.43% 0.01203 170.23)",
+          "oklch(37.86% 0.01203 170.23)",
+          "oklch(49.29% 0.01203 170.23)",
+          "oklch(60.71% 0.01203 170.23)",
+          "oklch(72.14% 0.01203 170.23)",
+          "oklch(83.57% 0.01203 170.23)",
+          "oklch(95.00% 0.01203 170.23)"
+        ]
+      },
+      "terminal-border": {
+        "role": "neutral",
+        "displayName": "Terminal Border",
+        "tonalRamp": [
+          "oklch(15.00% 0.01731 192.31)",
+          "oklch(26.43% 0.01731 192.31)",
+          "oklch(37.86% 0.01731 192.31)",
+          "oklch(49.29% 0.01731 192.31)",
+          "oklch(60.71% 0.01731 192.31)",
+          "oklch(72.14% 0.01731 192.31)",
+          "oklch(83.57% 0.01731 192.31)",
+          "oklch(95.00% 0.01731 192.31)"
+        ]
+      },
+      "terminal-divider": {
+        "role": "neutral",
+        "displayName": "Terminal Divider",
+        "tonalRamp": [
+          "oklch(15.00% 0.01199 170.24)",
+          "oklch(26.43% 0.01199 170.24)",
+          "oklch(37.86% 0.01199 170.24)",
+          "oklch(49.29% 0.01199 170.24)",
+          "oklch(60.71% 0.01199 170.24)",
+          "oklch(72.14% 0.01199 170.24)",
+          "oklch(83.57% 0.01199 170.24)",
+          "oklch(95.00% 0.01199 170.24)"
+        ]
+      },
+      "terminal-note-divider": {
+        "role": "neutral",
+        "displayName": "Terminal Note Divider",
+        "tonalRamp": [
+          "oklch(15.00% 0.00694 174.37)",
+          "oklch(26.43% 0.00694 174.37)",
+          "oklch(37.86% 0.00694 174.37)",
+          "oklch(49.29% 0.00694 174.37)",
+          "oklch(60.71% 0.00694 174.37)",
+          "oklch(72.14% 0.00694 174.37)",
+          "oklch(83.57% 0.00694 174.37)",
+          "oklch(95.00% 0.00694 174.37)"
+        ]
+      },
+      "copy-border": {
+        "role": "neutral",
+        "displayName": "Copy Border",
+        "tonalRamp": [
+          "oklch(15.00% 0.03557 215.77)",
+          "oklch(26.43% 0.03557 215.77)",
+          "oklch(37.86% 0.03557 215.77)",
+          "oklch(49.29% 0.03557 215.77)",
+          "oklch(60.71% 0.03557 215.77)",
+          "oklch(72.14% 0.03557 215.77)",
+          "oklch(83.57% 0.03557 215.77)",
+          "oklch(95.00% 0.03557 215.77)"
+        ]
+      },
+      "copy-hover": {
+        "role": "neutral",
+        "displayName": "Copy Hover",
+        "tonalRamp": [
+          "oklch(15.00% 0.04533 222.37)",
+          "oklch(26.43% 0.04533 222.37)",
+          "oklch(37.86% 0.04533 222.37)",
+          "oklch(49.29% 0.04533 222.37)",
+          "oklch(60.71% 0.04533 222.37)",
+          "oklch(72.14% 0.04533 222.37)",
+          "oklch(83.57% 0.04533 222.37)",
+          "oklch(95.00% 0.04533 222.37)"
+        ]
+      },
+      "diagram-dot": {
+        "role": "neutral",
+        "displayName": "Diagram Dot",
+        "tonalRamp": [
+          "oklch(15.00% 0.01941 200.84)",
+          "oklch(26.43% 0.01941 200.84)",
+          "oklch(37.86% 0.01941 200.84)",
+          "oklch(49.29% 0.01941 200.84)",
+          "oklch(60.71% 0.01941 200.84)",
+          "oklch(72.14% 0.01941 200.84)",
+          "oklch(83.57% 0.01941 200.84)",
+          "oklch(95.00% 0.01941 200.84)"
+        ]
+      },
+      "diagram-route": {
+        "role": "neutral",
+        "displayName": "Diagram Route",
+        "tonalRamp": [
+          "oklch(15.00% 0.05259 197.64)",
+          "oklch(26.43% 0.05259 197.64)",
+          "oklch(37.86% 0.05259 197.64)",
+          "oklch(49.29% 0.05259 197.64)",
+          "oklch(60.71% 0.05259 197.64)",
+          "oklch(72.14% 0.05259 197.64)",
+          "oklch(83.57% 0.05259 197.64)",
+          "oklch(95.00% 0.05259 197.64)"
+        ]
+      },
+      "diagram-server-line": {
+        "role": "neutral",
+        "displayName": "Diagram Server Line",
+        "tonalRamp": [
+          "oklch(15.00% 0.04086 215.22)",
+          "oklch(26.43% 0.04086 215.22)",
+          "oklch(37.86% 0.04086 215.22)",
+          "oklch(49.29% 0.04086 215.22)",
+          "oklch(60.71% 0.04086 215.22)",
+          "oklch(72.14% 0.04086 215.22)",
+          "oklch(83.57% 0.04086 215.22)",
+          "oklch(95.00% 0.04086 215.22)"
+        ]
+      }
+    },
+    "typographyMeta": {
+      "display": {
+        "displayName": "Display",
+        "purpose": "Two-line hero headline."
+      },
+      "headline": {
+        "displayName": "Headline",
+        "purpose": "Section headings."
+      },
+      "brand": {
+        "displayName": "Brand",
+        "purpose": "Unbroken wordmark."
+      },
+      "body": {
+        "displayName": "Body",
+        "purpose": "Instructions."
+      },
+      "intro": {
+        "displayName": "Intro",
+        "purpose": "Hero lead copy."
+      },
+      "button": {
+        "displayName": "Button",
+        "purpose": "Reveal action."
+      },
+      "label": {
+        "displayName": "Label",
+        "purpose": "Small metadata and copy action."
+      },
+      "code": {
+        "displayName": "Code",
+        "purpose": "SSH command examples."
+      }
+    },
+    "shadows": [],
+    "motion": [
+      {
+        "name": "anchor-scroll",
+        "value": "smooth",
+        "purpose": "In-page navigation; changes to auto when prefers-reduced-motion is reduce."
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "medium",
+        "value": "850px"
+      },
+      {
+        "name": "narrow",
+        "value": "600px"
+      }
+    ]
+  },
+  "components": [
+    {
+      "name": "Reveal Button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "Primary web-flag reveal action.",
+      "html": "<button class=\"ds-primary\" type=\"button\">Показати веб-прапор <svg aria-hidden=\"true\" viewBox=\"0 0 24 24\" width=\"20\" height=\"20\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M7 17 17 7M7 7h10v10\"/></svg></button>",
+      "css": ".ds-primary{display:inline-flex;align-items:center;gap:22px;background:#defa8d;color:#142e3a;border:0;border-radius:6px;min-height:48px;padding:10px 18px;font:700 14px/1.6 ui-sans-serif,system-ui,sans-serif;cursor:pointer}.ds-primary:focus-visible{outline:3px solid #247c83;outline-offset:5px}@media(hover:hover){.ds-primary:hover{background:#c9ed73}}@media(max-width:600px){.ds-primary{width:100%;justify-content:space-between;gap:10px;padding:10px 14px}}"
+    },
+    {
+      "name": "Copy Button",
+      "kind": "button",
+      "refersTo": "button-copy",
+      "description": "Compact secondary action on the dark reveal panel.",
+      "html": "<button class=\"ds-copy\" type=\"button\">Скопіювати</button>",
+      "css": ".ds-copy{border:1px solid #79979f;border-radius:5px;background:transparent;color:#fff;padding:4px 10px;font:12px/1.6 ui-sans-serif,system-ui,sans-serif;white-space:nowrap;cursor:pointer}.ds-copy:focus-visible{outline:3px solid #247c83;outline-offset:5px}@media(hover:hover){.ds-copy:hover{background:#264955}}"
+    },
+    {
+      "name": "Brand Link",
+      "kind": "nav",
+      "description": "The masthead identity, kept unbroken.",
+      "html": "<a class=\"ds-brand\" href=\"#\">Cyber&nbsp;ICE&nbsp;Box<svg aria-hidden=\"true\" viewBox=\"0 0 24 24\" width=\"20\" height=\"20\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M7 17 17 7M7 7h10v10\"/></svg></a>",
+      "css": ".ds-brand{font-family:Manrope,ui-sans-serif,sans-serif;font-size:21px;font-weight:750;text-decoration:none;letter-spacing:-.7px;white-space:nowrap;color:#142e3a}.ds-brand svg{display:inline-flex;vertical-align:middle;margin-left:12px;color:#0d767b}.ds-brand:focus-visible{outline:3px solid #247c83;outline-offset:5px}@media(max-width:600px){.ds-brand{font-size:19px}}"
+    },
+    {
+      "name": "Flag Panel",
+      "kind": "card",
+      "refersTo": "flag-panel",
+      "description": "Dark container for the first task and reveal action.",
+      "html": "<section class=\"ds-flag\"><span class=\"ds-number\">01</span><div><h2>Заберіть веб-прапор</h2><p>Це значення створено для вашого запуску.</p></div><span class=\"ds-status\"><span></span>Веб-сервер відповідає</span></section>",
+      "css": ".ds-flag{display:grid;grid-template-columns:32px 1fr auto;align-items:start;gap:24px;padding:38px 34px 30px;background:#142e3a;color:#fff;border-radius:12px;font:16px/1.6 ui-sans-serif,system-ui,sans-serif}.ds-number{font:500 13px/1.6 ui-monospace,monospace;color:#91a9b0;padding-top:5px}.ds-flag h2{font:650 27px/1.25 Manrope,ui-sans-serif,sans-serif;letter-spacing:-.5px;margin:0 0 14px}.ds-flag p{max-width:540px;font-size:15px;line-height:1.7;color:#c2d2d6;margin:0}.ds-status{display:flex;gap:8px;align-items:center;font-size:12px;color:#c2d2d6;white-space:nowrap;padding-top:5px}.ds-status>span{width:7px;height:7px;border-radius:50%;background:#defa8d}@media(max-width:850px){.ds-flag{grid-template-columns:24px 1fr;gap:18px;padding:30px 24px}.ds-status{grid-column:2;margin-top:4px}}@media(max-width:600px){.ds-flag{gap:12px;padding:25px 20px;border-radius:8px}.ds-flag h2{font-size:24px}.ds-flag p{font-size:14px}.ds-status{font-size:11px}}"
+    },
+    {
+      "name": "Terminal",
+      "kind": "custom",
+      "refersTo": "terminal",
+      "description": "Secondary SSH command example with a plain-language VPN note.",
+      "html": "<div class=\"ds-terminal\"><div class=\"ds-terminal-head\"><span>Термінал</span><span>SSH / 2222</span></div><pre><code><span class=\"ds-prompt\">$</span> ssh -p 2222 demo@@VPN_ADDRESS@\n<span class=\"ds-comment\"># пароль: cybericebox</span>\n<span class=\"ds-prompt\">$</span> cat flag.txt</code></pre><p>Зовнішнє посилання відкриває лише веб. Для SSH потрібен VPN.</p></div>",
+      "css": ".ds-terminal{min-width:0;border:1px solid #c7d7d6;border-radius:8px;background:#fff;overflow:hidden;color:#142e3a;font:16px/1.6 ui-sans-serif,system-ui,sans-serif}.ds-terminal-head{display:flex;justify-content:space-between;border-bottom:1px solid #d9e3df;padding:12px 18px;font-size:11px;letter-spacing:.4px;color:#48616b}.ds-terminal pre{padding:19px 18px 0;margin:0;white-space:pre-wrap;overflow-wrap:anywhere;font:13px/1.9 ui-monospace,SFMono-Regular,Consolas,monospace}.ds-prompt{color:#14747a}.ds-comment{color:#617980}.ds-terminal>p{border-top:1px solid #e4eae8;margin:20px 0 0;padding:12px 18px;color:#526c72;font-size:12px;line-height:1.65}@media(max-width:600px){.ds-terminal pre{font-size:12px}}"
+    },
+    {
+      "name": "Server Status",
+      "kind": "custom",
+      "refersTo": "status-dot",
+      "description": "A quiet connection indicator used in the dark panel.",
+      "html": "<span class=\"ds-connection\"><span aria-hidden=\"true\"></span>Веб-сервер відповідає</span>",
+      "css": ".ds-connection{display:flex;gap:8px;align-items:center;font:12px/1.6 ui-sans-serif,system-ui,sans-serif;color:#c2d2d6;white-space:nowrap;padding-top:5px}.ds-connection>span{width:7px;height:7px;border-radius:50%;background:#defa8d}@media(max-width:600px){.ds-connection{font-size:11px}}"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Connection Desk",
+    "overview": "A quiet editorial desk makes the first network connection feel approachable. The pale page, navy text and restrained teal diagram establish a calm reading surface; lime marks the action that yields a result.\n\nThe local Manrope headings give the page its identity, while familiar system text carries instructions. Spacious sections and a single dark reveal panel guide attention without decorative effects. Commands stay visibly distinct in a secondary terminal.",
+    "keyCharacteristics": [
+      "Large, tightly set two-line display type.",
+      "A pale reading surface with one dark action panel.",
+      "A route diagram that explains browser proxy and VPN access.",
+      "Direct controls, visible keyboard focus and readable command examples."
+    ],
+    "rules": [
+      {
+        "name": "The Result Accent Rule",
+        "body": "Lime identifies the flag action and its successful result; it does not become the page background or body-text color.",
+        "section": "colors"
+      },
+      {
+        "name": "The Familiar Instructions Rule",
+        "body": "Reserve the distinctive heading face for headings and the wordmark; keep prose in system sans and commands in monospace.",
+        "section": "typography"
+      }
+    ],
+    "dos": [
+      "Do keep the full Cyber ICE Box wordmark on one line with non-breaking spaces.",
+      "Do use Manrope for headings and the brand, system sans for prose, and monospace for commands and flags.",
+      "Do preserve the clear web-first, SSH-second hierarchy and the explicit VPN requirement.",
+      "Do keep focus visible and allow long flags and commands to wrap.",
+      "Do respect reduced motion and maintain the single-column mobile reading order."
+    ],
+    "donts": [
+      "Don't use shadows to replace the existing tonal and border hierarchy.",
+      "Don't make the secondary SSH terminal compete with the web-flag action.",
+      "Don't turn source snippets into decorative monospace body copy.",
+      "Don't add color roles, font families or component variants absent from the implementation."
+    ]
+  }
+}

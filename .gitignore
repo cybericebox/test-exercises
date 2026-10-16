@@ -1,0 +1,7 @@
+dist/
+__pycache__/
+.impeccable/review/
+*.pyc
+.env
+
+_platform/

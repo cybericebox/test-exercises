@@ -1,0 +1,117 @@
+{
+  "format": "cib-exercise/v1",
+  "exercise": {
+    "ID": "3a8714e8-9198-502a-969b-3be23bc1feb1",
+    "Name": "Перший прапор: знайомство",
+    "Description": "Просте статичне завдання: завантажте Go-файл, знайдіть прапор і перевірте надсилання відповіді.",
+    "Tags": [
+      "тестове",
+      "демонстрація"
+    ],
+    "Scope": 0,
+    "AccessLevel": 0
+  },
+  "versions": [
+    {
+      "ID": "c6f4ec53-b690-549e-aa9d-e07e50764a77",
+      "ExerciseID": "3a8714e8-9198-502a-969b-3be23bc1feb1",
+      "Status": "published",
+      "AdminNote": "Демонстраційний набір v1.0.0",
+      "Label": "",
+      "Variants": [
+        {
+          "id": "5556a856-b2c3-581b-88d9-54adeba1d035",
+          "index": 1,
+          "note": "",
+          "tasks": [
+            {
+              "id": "8abe594c-1e79-5683-b639-826b025c9d90",
+              "name": "Перший прапор",
+              "difficulty": "elementary",
+              "description": {
+                "root": {
+                  "type": "root",
+                  "version": 1,
+                  "direction": null,
+                  "format": "",
+                  "indent": 0,
+                  "children": [
+                    {
+                      "type": "paragraph",
+                      "version": 1,
+                      "direction": null,
+                      "format": "",
+                      "indent": 0,
+                      "textFormat": 0,
+                      "textStyle": "",
+                      "children": [
+                        {
+                          "type": "text",
+                          "version": 1,
+                          "text": "Завантажте файл welcome.go та відкрийте його у текстовому редакторі.",
+                          "detail": 0,
+                          "format": 0,
+                          "mode": "normal",
+                          "style": ""
+                        }
+                      ]
+                    },
+                    {
+                      "type": "paragraph",
+                      "version": 1,
+                      "direction": null,
+                      "format": "",
+                      "indent": 0,
+                      "textFormat": 0,
+                      "textStyle": "",
+                      "children": [
+                        {
+                          "type": "text",
+                          "version": 1,
+                          "text": "Знайдіть рядок у форматі ICE{...} та надішліть його як відповідь. Запускати програму не обовʼязково.",
+                          "detail": 0,
+                          "format": 0,
+                          "mode": "normal",
+                          "style": ""
+                        }
+                      ]
+                    }
+                  ]
+                }
+              },
+              "flag": [
+                "ICE{welcome_to_cyber_ice_box}"
+              ],
+              "attachments": [
+                {
+                  "file_id": "23e586d8-a925-537e-8178-2a7612879873",
+                  "name": "welcome.go"
+                }
+              ]
+            }
+          ],
+          "topology": {
+            "vpn": {
+              "enabled": false,
+              "dhcp": false
+            },
+            "internet": {
+              "enabled": false,
+              "dhcp": false
+            },
+            "devices": [],
+            "connections": []
+          }
+        }
+      ],
+      "CreatedAt": "2026-10-16T00:00:00Z",
+      "PublishedAt": "2026-10-16T00:00:00Z"
+    }
+  ],
+  "files": {
+    "23e586d8-a925-537e-8178-2a7612879873": {
+      "name": "welcome.go",
+      "content_type": "text/plain; charset=utf-8"
+    }
+  }
+}
