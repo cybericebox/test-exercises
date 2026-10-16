@@ -4,8 +4,8 @@ Two Ukrainian introductory exercises help participants inspect an attachment, re
 
 ## Examples
 
-- **Перший прапор** (`static/`): a downloadable Go source file contains a byte packet, the XOR mask (`0x2a`) and a `restore` function. Recovering the packet yields the fixed flag `ICE{welcome_to_cyber_ice_box}`. The supplied program reports the byte count; merely running it does not print the flag. Compilation is optional.
-- **Перевірка підключення** (`dynamic/`): one topology contains independent web and SSH tasks. The platform generates separate values from templates and injects `WEB_FLAG` and `SSH_FLAG`; each template has 96 bits of randomness. Startup requires both resolved flags.
+- **Загублений пакет** (`static/`): a downloadable Go source file contains a byte packet, the XOR mask (`0x2a`) and a `restore` function. Recovering the packet yields the fixed flag `ICE{welcome_to_cyber_ice_box}`. The supplied program reports the byte count; merely running it does not print the flag. Compilation is optional.
+- **Журнал зв’язку** (`dynamic/`): one topology contains independent web and SSH tasks. The platform generates separate values from templates and injects `WEB_FLAG` and `SSH_FLAG`; each template has 96 bits of randomness. Startup requires both resolved flags.
 
 ## Participant flow
 
