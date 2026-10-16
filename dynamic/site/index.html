@@ -1,10 +1,54 @@
 <!doctype html>
-<html lang="uk"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="color-scheme" content="light"><title>Перше зʼєднання · Cyber&nbsp;ICE&nbsp;Box</title><link rel="stylesheet" href="/style.css"><script src="/app.js" defer></script></head>
-<body><header class="masthead"><a class="brand" href="/">Cyber&nbsp;ICE&nbsp;Box<span class="brand-mark"><svg aria-hidden="true" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M7 7h10v10"/></svg></span></a><span class="edition">Навчальна лабораторія</span></header>
-<main><section class="hero"><div><h1>Перше зʼєднання.<br><span>Перший прапор.</span></h1><p class="intro">Якщо ви бачите цю сторінку — веб-підключення працює. Залишилося знайти прапор і надіслати його у завданні.</p><a class="jump" href="#flag">Перейти до прапора <svg aria-hidden="true" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4v16m-7-7 7 7 7-7"/></svg></a></div>
-<svg class="network" viewBox="0 0 440 330" role="img" aria-label="Два шляхи до лабораторії: браузер через проксі та захищене зʼєднання VPN"><defs><pattern id="dots" width="20" height="20" patternUnits="userSpaceOnUse"><circle cx="1" cy="1" r="1" fill="#c7d9da"/></pattern></defs><rect width="440" height="330" fill="url(#dots)"/><path d="M100 95H210V165H320M100 250H210V165" fill="none" stroke="#87b9ba" stroke-width="2" stroke-dasharray="6 6"/><rect x="36" y="55" width="128" height="80" rx="8" fill="#fff" stroke="#276a72" stroke-width="2"/><path d="M36 76H164" stroke="#276a72"/><circle cx="47" cy="66" r="2" fill="#276a72"/><circle cx="56" cy="66" r="2" fill="#276a72"/><text x="100" y="108" text-anchor="middle">БРАУЗЕР</text><path d="M100 207l35 12v28c0 22-35 41-35 41s-35-19-35-41v-28z" fill="#defa8d" stroke="#276a72" stroke-width="2"/><text x="100" y="249" text-anchor="middle">VPN</text><rect x="278" y="113" width="120" height="104" rx="8" fill="#142e3a"/><path d="M293 143H383M293 163H383M293 183H383" stroke="#779aa3"/><circle cx="372" cy="143" r="3" fill="#defa8d"/><circle cx="372" cy="163" r="3" fill="#defa8d"/><circle cx="372" cy="183" r="3" fill="#defa8d"/><text x="338" y="245" text-anchor="middle">ВАША ЛАБОРАТОРІЯ</text><text x="202" y="79" class="small">ПРОКСІ</text></svg></section>
-<section class="flag-section" id="flag"><div class="section-number" aria-hidden="true">01</div><div class="flag-main"><h2>Заберіть веб-прапор</h2><p>Це значення створено для вашого запуску. Скопіюйте його та вставте у поле відповіді першого завдання.</p><div class="flag-actions"><button id="reveal" class="button" type="button" aria-controls="flag-value" aria-expanded="false">Показати веб-прапор <svg aria-hidden="true" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M7 7h10v10"/></svg></button><div id="flag-value" hidden><output id="web-flag">@WEB_FLAG@</output><button id="copy" class="copy" type="button" aria-label="Скопіювати прапор">Скопіювати</button></div></div><p class="feedback" id="feedback" role="status" aria-live="polite"></p></div><span class="status"><span aria-hidden="true"></span>Веб-сервер відповідає</span></section>
-<section class="ssh-section"><div class="ssh-text"><span class="section-number" aria-hidden="true">02</span><h2>Ще один шлях — SSH</h2><p>У другому завданні підключіться через VPN і відкрийте термінал. Інший прапор чекає у файлі <code>flag.txt</code>.</p></div><div class="terminal"><div class="terminal-head"><span>Термінал</span><span>SSH / 2222</span></div><pre><code><span class="prompt">$</span> ssh -p 2222 demo@@VPN_ADDRESS@
-<span class="comment"># пароль: cybericebox</span>
-<span class="prompt">$</span> cat flag.txt</code></pre><p>Зовнішнє посилання відкриває лише веб. Для SSH потрібен VPN.</p></div></section>
-</main><footer><span class="brand">Cyber&nbsp;ICE&nbsp;Box</span><span>Маленький крок у вашу першу лабораторію.</span></footer></body></html>
+<html lang="uk">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="color-scheme" content="light">
+  <title>Журнал зв’язку · Cyber&nbsp;ICE&nbsp;Box</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <header class="masthead">
+    <a class="brand" href="/">Cyber&nbsp;ICE&nbsp;Box</a>
+    <nav aria-label="Навігація"><a href="/" aria-current="page">Повідомлення</a><a href="/#connection">Підключення</a></nav>
+  </header>
+  <main>
+    <div class="intro">
+      <h1>Журнал <span>зв’язку</span></h1>
+      <p>Попередня зміна залишила нотатку та пакет даних. Перегляньте записи й відновіть передане повідомлення.</p>
+    </div>
+    <div class="archive-layout">
+      <section class="records" aria-label="Записи журналу">
+        <article class="record note-record">
+          <div class="record-meta"><span>Нотатка чергового</span><span>Текстовий файл</span></div>
+          <h2>Перед здачею зміни</h2>
+          <p>Кілька слів про отриманий пакет і спосіб його передачі.</p>
+          <a class="file-link" href="/files/shift-note.txt">Прочитати нотатку</a>
+        </article>
+        <article class="record packet-record">
+          <div class="record-meta"><span>Вхідне повідомлення</span><code>Р-17</code></div>
+          <h2>Передача Р-17</h2>
+          <p>Пакет прийнято без пошкоджень. Його вміст збережено в окремому вкладенні.</p>
+          <a class="button" href="/message.html">Відкрити повідомлення</a>
+        </article>
+      </section>
+      <aside class="brief">
+        <h2>Що потрібно знайти</h2>
+        <p>У переданому повідомленні є прапор. Відновіть початковий текст і надішліть відповідь у вебзавданні.</p>
+        <p class="note">Формат відповіді: <code>ICE{...}</code></p>
+      </aside>
+    </div>
+    <section class="connection" id="connection" aria-labelledby="connection-heading">
+      <div>
+        <h2 id="connection-heading">Доступ до сервера</h2>
+        <p>Другий прапор залишили в домашній папці користувача <code>demo</code>. Підключіться через VPN і знайдіть файл <code>flag.txt</code>.</p>
+      </div>
+      <div class="login">
+        <pre><code>ssh -p 2222 demo@@VPN_ADDRESS@</code></pre>
+        <p>Пароль: <code>cybericebox</code></p>
+        <details><summary>Підказка для SSH</summary><p>Команда <code>ls</code> покаже файли, а <code>cat назва_файлу</code> — їхній вміст.</p></details>
+      </div>
+    </section>
+  </main>
+</body>
+</html>

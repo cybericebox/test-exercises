@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Isolated Docker test: HTTP proxy, real WireGuard, SSH, flags and internet egress."""
 
-import json, os, subprocess, time, uuid
+import base64, json, os, subprocess, time, uuid
 
 IMAGE = os.environ.get("CIB_DEMO_IMAGE", "cib-test-exercises:local")
 TOOLS = os.environ.get("CIB_TOOLS_IMAGE", "cib-test-exercises:tools")
@@ -141,7 +141,16 @@ def main():
     docker("exec", "-i", proxy, "sh", "-c", "cat > /tmp/proxy.conf", input=nginx)
     execute(proxy, "nginx", "-c", "/tmp/proxy.conf")
     page = execute(client, "curl", "-fsS", f"http://{proxy_ip}:8081/")
-    assert "ICE{web_runtime_smoke}" in page and "ICE{ssh_runtime_smoke}" not in page
+    assert 'href="/message.html"' in page
+    assert "ICE{web_runtime_smoke}" not in page and "ICE{ssh_runtime_smoke}" not in page
+    for base in [f"http://{proxy_ip}:8081"]:
+        message = execute(client, "curl", "-fsS", base + "/message.html")
+        assert 'href="/files/packet.txt"' in message
+        packet = execute(client, "curl", "-fsS", base + "/files/packet.txt")
+        assert (
+            base64.b64decode(packet.splitlines()[-1]).decode()
+            == "ICE{web_runtime_smoke}"
+        )
     print("PASS HTTP proxy without VPN", flush=True)
     private = {c: execute(c, "wg", "genkey").strip() for c in [gateway, client]}
     public = {
@@ -160,7 +169,11 @@ def main():
     page = execute(
         client, "curl", "--max-time", "8", "-fsS", "http://10.128.7.10:8080/"
     )
-    assert "ICE{web_runtime_smoke}" in page
+    assert 'href="/message.html"' in page
+    packet = execute(client, "curl", "-fsS", "http://10.128.7.10:8080/files/packet.txt")
+    assert (
+        base64.b64decode(packet.splitlines()[-1]).decode() == "ICE{web_runtime_smoke}"
+    )
     handshake = execute(gateway, "wg", "show", "wg0", "latest-handshakes").split()[-1]
     assert int(handshake) > 0
     print("PASS HTTP through an actual WireGuard tunnel", flush=True)

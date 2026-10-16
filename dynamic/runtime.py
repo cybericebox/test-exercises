@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Materialize platform-provided flags, then supervise nginx and OpenSSH."""
 
-import fcntl, html, os, pathlib, re, shutil, signal, socket, struct, subprocess, sys, time
+import base64, fcntl, html, os, pathlib, re, shutil, signal, socket, struct, subprocess, sys, time
 
 
 def materialize(env, root, source):
@@ -12,13 +12,19 @@ def materialize(env, root, source):
         raise ValueError("WEB_FLAG and SSH_FLAG must contain resolved ICE flags")
     site = root / "site"
     shutil.copytree(source, site, dirs_exist_ok=True)
-    page = (site / "index.html").read_text()
-    page = page.replace(
-        "@WEB_FLAG@", html.escape(flags["WEB_FLAG"], quote=True)
-    ).replace(
-        "@VPN_ADDRESS@", html.escape(env.get("VPN_ADDRESS", "10.128.0.10"), quote=True)
+    for page in site.glob("*.html"):
+        page.write_text(
+            page.read_text().replace(
+                "@VPN_ADDRESS@",
+                html.escape(env.get("VPN_ADDRESS", "10.128.0.10"), quote=True),
+            )
+        )
+    files = site / "files"
+    files.mkdir(exist_ok=True)
+    payload = base64.b64encode(flags["WEB_FLAG"].encode()).decode()
+    (files / "packet.txt").write_text(
+        "Передача Р-17\nКодування: Base64\n\n" + payload + "\n"
     )
-    (site / "index.html").write_text(page)
     (root / "flag.txt").write_text(flags["SSH_FLAG"] + "\n")
     (root / "flag.txt").chmod(0o400)
 

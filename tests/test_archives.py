@@ -1,4 +1,4 @@
-import hashlib, json, pathlib, subprocess, unittest, zipfile
+import hashlib, json, pathlib, re, subprocess, unittest, zipfile
 
 ROOT = pathlib.Path(__file__).resolve().parents[1]
 
@@ -18,12 +18,21 @@ class Archives(unittest.TestCase):
                 if name == "static":
                     task = variant["tasks"][0]
                     self.assertFalse(task.get("linked_device_id"))
-                    self.assertIn(
-                        task["flag"][0],
-                        z.read(
-                            "files/" + task["attachments"][0]["file_id"] + "/welcome.go"
-                        ).decode(),
+                    source = z.read(
+                        "files/" + task["attachments"][0]["file_id"] + "/welcome.go"
+                    ).decode()
+                    self.assertNotIn(task["flag"][0], source)
+                    mask = int(
+                        re.search(r"const mask byte = (0x[0-9a-f]+)", source).group(1),
+                        16,
                     )
+                    values = re.search(
+                        r"var packet = \[\]byte\{(.*?)\}", source, re.S
+                    ).group(1)
+                    restored = bytes(
+                        int(n, 16) ^ mask for n in re.findall(r"0x[0-9a-f]+", values)
+                    ).decode()
+                    self.assertEqual(restored, task["flag"][0])
                 else:
                     self.assertEqual(len(variant["tasks"]), 2)
                     self.assertTrue(

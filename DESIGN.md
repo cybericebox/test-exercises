@@ -1,43 +1,31 @@
 ---
-name: "Cyber ICE Box — Training Exercises"
-description: "A Ukrainian connection desk for a first web flag and VPN-only SSH practice."
+name: "Cyber ICE Box — Training Exercises"
+description: "A Ukrainian communications archive for introductory flag recovery and VPN access."
 colors:
   paper: "#f4f7f5"
   ink: "#142e3a"
   teal: "#14747a"
   focus-teal: "#247c83"
-  brand-teal: "#0d767b"
-  diagram-teal: "#276a72"
   lime: "#defa8d"
   lime-hover: "#c9ed73"
   white: "#fff"
   body-muted: "#48616b"
   meta-muted: "#526c72"
-  section-muted: "#91a9b0"
   on-dark-muted: "#c2d2d6"
-  section-number-muted: "#5c7479"
-  code-comment: "#617980"
   divider: "#d5dfdb"
-  terminal-border: "#c7d7d6"
-  terminal-divider: "#d9e3df"
-  terminal-note-divider: "#e4eae8"
-  copy-border: "#79979f"
-  copy-hover: "#264955"
-  diagram-dot: "#c7d9da"
-  diagram-route: "#87b9ba"
-  diagram-server-line: "#779aa3"
+  record-border: "#c7d7d6"
 typography:
   display:
     fontFamily: "Manrope, ui-sans-serif, sans-serif"
-    fontSize: "clamp(40px, 4.5vw, 64px)"
+    fontSize: "clamp(36px, 4.5vw, 54px)"
     fontWeight: 730
-    lineHeight: 1.07
-    letterSpacing: "-2px"
+    lineHeight: 1.15
+    letterSpacing: "-1.5px"
   headline:
     fontFamily: "Manrope, ui-sans-serif, sans-serif"
-    fontSize: "27px"
+    fontSize: "25px"
     fontWeight: 650
-    lineHeight: 1.25
+    lineHeight: 1.3
     letterSpacing: "-0.5px"
   brand:
     fontFamily: "Manrope, ui-sans-serif, sans-serif"
@@ -45,176 +33,157 @@ typography:
     fontWeight: 750
     letterSpacing: "-0.7px"
   body:
-    fontFamily: "ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", sans-serif"
+    fontFamily: 'ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif'
     fontSize: "16px"
-    lineHeight: 1.6
+    lineHeight: 1.65
   intro:
-    fontFamily: "ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", sans-serif"
+    fontFamily: 'ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif'
     fontSize: "18px"
     lineHeight: 1.65
   button:
-    fontFamily: "ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", sans-serif"
-    fontSize: "14px"
+    fontFamily: 'ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif'
+    fontSize: "15px"
     fontWeight: 700
-  label:
-    fontFamily: "ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", sans-serif"
-    fontSize: "12px"
+    lineHeight: 1.65
+  metadata:
+    fontFamily: 'ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif'
+    fontSize: "13px"
+    lineHeight: 1.65
   code:
     fontFamily: "ui-monospace, SFMono-Regular, Consolas, monospace"
-    fontSize: "13px"
-    lineHeight: 1.9
+    fontSize: "14px"
+    lineHeight: 1.7
 rounded:
-  copy: "5px"
-  button: "6px"
-  terminal: "8px"
-  flag-section: "12px"
+  stamp: "4px"
+  control: "6px"
+  document: "10px"
 spacing:
-  compact: "12px"
-  control: "18px"
-  block: "24px"
-  hero: "28px"
+  small: "14px"
+  prose: "18px"
+  inset: "24px"
+  block: "28px"
+  columns: "48px"
 components:
   button-primary:
     backgroundColor: "{colors.lime}"
     textColor: "{colors.ink}"
     typography: "{typography.button}"
-    rounded: "{rounded.button}"
-    padding: "10px 18px"
+    rounded: "{rounded.control}"
+    padding: "10px 20px"
   button-primary-hover:
     backgroundColor: "{colors.lime-hover}"
-  button-copy:
-    backgroundColor: "transparent"
-    textColor: "{colors.white}"
-    typography: "{typography.label}"
-    rounded: "{rounded.copy}"
-    padding: "4px 10px"
-  button-copy-hover:
-    backgroundColor: "{colors.copy-hover}"
-  flag-panel:
+  archive-record:
+    backgroundColor: "{colors.white}"
+    padding: "28px 30px"
+  incoming-record:
     backgroundColor: "{colors.ink}"
     textColor: "{colors.white}"
-    rounded: "{rounded.flag-section}"
-    padding: "38px 34px 30px"
-  terminal:
+    padding: "28px 30px"
+  message-document:
     backgroundColor: "{colors.white}"
-    rounded: "{rounded.terminal}"
-  status-dot:
-    backgroundColor: "{colors.lime}"
-    rounded: "50%"
-    width: "7px"
-    height: "7px"
+    rounded: "{rounded.document}"
+    padding: "38px 44px"
+  command:
+    backgroundColor: "{colors.white}"
+    textColor: "{colors.ink}"
+    typography: "{typography.code}"
+    rounded: "{rounded.control}"
+    padding: "14px 16px"
 ---
 
-# Design System: Cyber ICE Box — Training Exercises
+# Design System: Cyber ICE Box — Training Exercises
 
 ## Overview
 
-**Creative North Star: "The Connection Desk"**
+**Creative North Star: "The Communications Archive"**
 
-A quiet editorial desk makes the first network connection feel approachable. The pale page, navy text and restrained teal diagram establish a calm reading surface; lime marks the action that yields a result.
+A quiet communications archive uses pale paper, navy text and restrained teal to make short records easy to scan. A single dark incoming record and lime action direct the participant to the next document.
 
-The local Manrope headings give the page its identity, while familiar system text carries instructions. Spacious sections and a single dark reveal panel guide attention without decorative effects. Commands stay visibly distinct in a secondary terminal.
+Locally served Manrope gives headings and the wordmark their identity; system text carries the Ukrainian instructions. White document surfaces, thin borders and generous spacing keep the archive and its attachment readable.
 
 **Key Characteristics:**
-- Large, tightly set two-line display type.
-- A pale reading surface with one dark action panel.
-- A route diagram that explains browser proxy and VPN access.
-- Direct controls, visible keyboard focus and readable command examples.
+- Pale page with flat, bordered records and documents.
+- Manrope headings, system prose and monospace technical text.
+- One lime action per primary record or attachment.
+- Visible keyboard focus and a single-column mobile reading order.
 
 ## Colors
 
-The palette pairs pale paper and deep navy with functional teal and a small, bright lime action accent. The frontmatter records every color currently used by the stylesheet and route illustration; it is the normative source for exact values.
+The original paper, navy, teal and lime palette remains intact. Exact source colors are normative in the frontmatter; unused illustration and obsolete control colors are not part of the current system.
 
 ### Primary
 
-- **Action Lime** (`lime`, `lime-hover`): the reveal button, successful feedback, flag output and server status lights.
-- **Route Teal** (`teal`, `brand-teal`, `diagram-teal`, `focus-teal`): the highlighted headline, brand arrow, route labels and keyboard focus respectively.
+- **Action Lime** (`lime`, `lime-hover`): the primary navigation/download link and its hover state; also text selection.
+- **Archive Teal** (`teal`, `focus-teal`): headline emphasis, text links, active navigation, document stamp and keyboard focus.
 
 ### Neutral
 
-- **Paper** (`paper`) and **Ink** (`ink`): page background, primary text and the dark reveal panel.
-- **White** (`white`): terminal surface, browser diagram node and text on the dark panel.
-- **Body and metadata tones** (`body-muted`, `meta-muted`, `section-number-muted`, `code-comment`): instructional text, small context and command comments.
-- **Dark-surface text** (`section-muted`, `on-dark-muted`): section numbering and supporting instructions inside the reveal panel.
-- **Borders** (`divider`, `terminal-border`, `terminal-divider`, `terminal-note-divider`, `copy-border`): lightweight structural separation; `copy-hover` fills the copy control on hover.
-- **Illustration-only tones** (`diagram-dot`, `diagram-route`, `diagram-server-line`): the dot field, connecting paths and server slots. Keep these scoped to the diagram.
+- **Paper / Ink** (`paper`, `ink`): page, ordinary text and the dark incoming record.
+- **White** (`white`): note, message and command surfaces, plus text on the incoming record.
+- **Supporting text** (`body-muted`, `meta-muted`, `on-dark-muted`): prose, record metadata and dark-surface supporting copy.
+- **Structural lines** (`divider`, `record-border`): masthead and document separators, record/document outlines and command borders.
 
-**The Result Accent Rule.** Lime identifies the flag action and its successful result; it does not become the page background or body-text color.
+**The Action Accent Rule.** Lime identifies the primary next step; teal carries ordinary navigation and document context.
 
 ## Typography
 
-**Display Font:** locally served variable Manrope, with UI sans-serif fallback. The font is loaded from `/fonts/manrope.ttf` with swap behavior and weights (200–800). The font is sourced from Google Fonts (`google/fonts/ofl/manrope`); its SIL Open Font License is included at `dynamic/site/fonts/OFL.txt`.
+Manrope is served locally from `/fonts/manrope.ttf`, with swap behavior and variable weights (200–800); the included SIL Open Font License is at `dynamic/site/fonts/OFL.txt`. System sans carries prose, and UI monospace carries commands, filenames in technical copy and identifiers.
 
-**Body Font:** system UI sans-serif with platform fallbacks. **Code Font:** UI monospace with SFMono-Regular and Consolas fallbacks.
+The frontmatter records desktop roles. The incoming record heading uses (30px); the briefing heading uses (22px); the attachment heading uses (20px). The message title uses `clamp(30px, 4vw, 44px)`. Introductory prose is capped at (660px), record prose at (510px), message prose at (650px), and hint prose at (65ch).
 
-The display is compact and deliberate; ordinary instructions are open and familiar. Frontmatter roles are the observed desktop styles, not a newly imposed type scale.
+At the narrow breakpoint, the journal title uses (38px) with tracking (-1px), the message title (32px), incoming heading (27px), brand (19px), intro (16px), metadata (12px) and code (13px).
 
-- **Display:** the two-line hero title. At the narrow breakpoint it uses (42px) with tracking (-1.5px).
-- **Headline:** section titles; narrow screens use (24px).
-- **Brand:** an unbroken wordmark; narrow header type becomes (19px), footer type is (16px).
-- **Body / Intro:** standard instructions and larger lead copy. Lead copy is capped at (480px); SSH prose at (430px).
-- **Button / Label:** action labels and small status/footer text.
-- **Code:** SSH commands. Narrow terminal text uses (12px); the revealed flag uses (14px) with line-height (1.7).
-
-**The Familiar Instructions Rule.** Reserve the distinctive heading face for headings and the wordmark; keep prose in system sans and commands in monospace.
+**The Familiar Instructions Rule.** Reserve Manrope for headings and the wordmark; keep prose in system sans and technical text in monospace.
 
 ## Layout
 
-A centered container has maximum width (1220px), with side padding (48px), reduced to (24px) at viewport widths up to (850px). The desktop masthead is (112px) high. The hero uses columns (1.2fr 1fr), a gap (28px) and vertical padding (76px 0 70px); the route diagram is capped at (440px).
+The masthead and main content share a centered maximum width (1160px) and side padding (40px). The masthead has minimum height (96px), with brand and navigation at opposite sides. Introductory padding is (56px 0 36px).
 
-The dark reveal panel uses a section number, the instruction/action column and a status column. At the middle breakpoint the status moves below the instructions. The SSH section uses two equal columns with gap (68px), reduced to (30px) at the middle breakpoint.
+The archive uses columns `minmax(0, 1.8fr) minmax(0, 1fr)` and gap (48px). Two records share one outlined container; the supporting objective sits alongside. The connection section uses two equal columns with gap (48px), top margin (44px), a top separator and padding (36px 0 52px).
 
-At viewport widths up to (600px), the masthead becomes (84px) high, the hero and SSH sections stack, and the diagram is capped at (330px). The reveal action fills its available column, the panel padding becomes (25px 20px), and the footer becomes a vertical stack. Long flag values and terminal commands wrap inside their containers.
+The message page has padding (30px 0 64px). Its white document is capped at (850px), centered with top margin (28px) and inset (38px 44px). Metadata uses (80px 1fr) columns with gap (16px). The attachment aligns descriptive text and action horizontally, separated from prose by fine rules.
 
-The spacing frontmatter lists recurring observed gaps and insets; larger section paddings remain component-specific. Anchor scrolling reserves (24px), uses smooth motion, and becomes immediate when reduced motion is requested.
+At widths up to (760px), side padding becomes (24px), navigation wraps below the brand as needed, the archive and connection become one column, and records/documents use inset (24px). The primary action fills its column. The attachment stacks vertically, and the decorative document stamp is hidden. Commands preserve whitespace while wrapping anywhere. Native anchor scrolling reserves (24px); the site adds no motion or transitions.
 
 ## Elevation & Depth
 
-The implementation has no shadows. Depth comes from the navy reveal panel, the white terminal, the pale page and thin separators. The route illustration uses strokes and flat fills. Hover changes a control's color or adds an underline; it does not lift surfaces.
+There are no shadows. Depth comes from flat white documents, the dark incoming record, pale page and thin structural borders. Hover changes the primary fill or underlines navigation; surfaces do not lift.
 
 ## Shapes
 
-Mostly rectangular forms use modest rounded corners. The reveal panel has the largest desktop radius and becomes tighter on mobile. The terminal and illustration nodes share a smaller silhouette, the reveal button is more compact, and the copy control is slightly tighter again. Circular geometry is reserved for small status indicators and illustration dots.
+The record group and message document use the document radius. Primary links and command blocks use the control radius. A small outlined document stamp uses the stamp radius and rotates (-5deg) on desktop. Separators remain straight and light.
 
 ## Components
 
-### Buttons
+### Primary Action
 
-The primary action is compact, solid lime with dark text, a minimum height (48px) and a directional arrow. On hover-capable devices its fill shifts to `lime-hover`. The copy action is a small transparent control with a light border; hovering fills it with `copy-hover`.
+A solid lime anchor advances to the message or downloads its attachment. It has minimum height (48px), centered text and the frontmatter padding. Hover-capable devices use `lime-hover`; narrow layouts make it full width. It retains native link/download semantics.
 
-All focusable elements share a teal outline (3px) with offset (5px). There is no transition or transform on these controls. On mobile the reveal button fills its column and distributes label and arrow to opposite ends.
+### Masthead and Navigation
 
-### Brand / Masthead
+An unbroken wordmark anchors a compact pair of text links. Desktop navigation uses (14px) text and gap (28px); narrow navigation uses (13px) and gap (22px). The current-page link is underlined in teal. Hover underlines links. All focusable elements use a teal outline (3px) with offset (5px).
 
-The masthead pairs the unbroken brand link with a small laboratory label. The arrow is an inline SVG, not an image dependency. A thin bottom divider sets the page boundary; small-screen metadata wraps within a narrow right-aligned block.
+### Archive Records
 
-### Flag Panel
+A white note and navy incoming transmission share one bordered, clipped container. Each has a metadata row, heading, prose and a link. Metadata is muted; dark-record supporting text uses `on-dark-muted`. The note uses a teal text link; the transmission uses the primary action.
 
-A dark, numbered action region prioritizes the web flag. The initial reveal control exposes the flag output, sets the expanded state, hides itself and focuses the copy button. A reserved feedback line announces copy success or manual-copy guidance without collapsing the panel's rhythm. Flag text is selectable and can wrap anywhere.
+### Message Document and Attachment
 
-### Status Indicator
+The white bordered document contains its heading, a desktop identifier stamp, definition-list metadata and readable prose. The attachment is a separate ruled row with a filename, short descriptor and download action. Its mobile order is text then full-width action.
 
-A small lime dot accompanies a short pale label. The label stays on one line. Its location follows the reveal panel's responsive grid.
+### Command Block and Hints
 
-### Terminal
-
-A white bordered container keeps SSH secondary. The small header identifies the protocol and port; wrapped monospace commands sit above a divided explanatory note. Muted comments and teal prompts help scanning without changing the command text. The VPN-only requirement stays in normal body text below the example.
-
-### Route Diagram
-
-A flat inline SVG explains two routes to the lab: browser through proxy, or VPN. A dot field, dashed branches, browser window, shield and dark server establish the diagram vocabulary. It scales proportionally and retains an accessible text description.
+The SSH command sits in a simple white bordered `pre` block, followed by credentials and a native expandable hint. The message uses the same `details`/`summary` pattern for its optional hint. Summary text is teal, semibold, with vertical padding (8px); expanded prose has top margin (10px). There is no custom disclosure script.
 
 ## Do's and Don'ts
 
 ### Do:
-- **Do** keep the full Cyber ICE Box wordmark on one line with non-breaking spaces.
-- **Do** use Manrope for headings and the brand, system sans for prose, and monospace for commands and flags.
-- **Do** preserve the clear web-first, SSH-second hierarchy and the explicit VPN requirement.
-- **Do** keep focus visible and allow long flags and commands to wrap.
-- **Do** respect reduced motion and maintain the single-column mobile reading order.
+- **Do** keep the full Cyber ICE Box wordmark on one line with non-breaking spaces.
+- **Do** use Manrope for headings and the brand, system sans for prose, and monospace for commands and identifiers.
+- **Do** preserve native links and expandable hints with visible keyboard focus.
+- **Do** let commands wrap and stack records, supporting instructions and attachments on narrow screens.
 
 ### Don't:
 - **Don't** use shadows to replace the existing tonal and border hierarchy.
-- **Don't** make the secondary SSH terminal compete with the web-flag action.
-- **Don't** turn source snippets into decorative monospace body copy.
+- **Don't** turn technical snippets into decorative body copy.
 - **Don't** add color roles, font families or component variants absent from the implementation.

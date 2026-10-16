@@ -50,8 +50,8 @@ func TestPortableDemoArtifacts(t *testing.T) {
 					}
 				}
 				for _, attachment := range task.Attachments {
-					if !strings.Contains(string(archive.Files["files/"+attachment.FileID.String()+"/"+attachment.Name]), task.Flag[0]) {
-						t.Fatal("attachment and static flag differ")
+					if len(archive.Files["files/"+attachment.FileID.String()+"/"+attachment.Name]) == 0 {
+						t.Fatal("imported static attachment is missing")
 					}
 				}
 			}

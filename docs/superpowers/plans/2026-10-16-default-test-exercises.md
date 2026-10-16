@@ -23,12 +23,8 @@ Ukrainian challenge copy. Static flag fixed; WEB_FLAG and SSH_FLAG platform temp
 - [x] Run isolated proxy/VPN/internet smoke checks and desktop/mobile visual review.
 - [x] Configure public GitHub repository and Docker Hub publishing; publish v1.0.0 and verify image/archive downloads.
 
-## Verified release
+## Approved v1.0.0 replacement
 
-- Release: https://github.com/cybericebox/test-exercises/releases/tag/v1.0.0
-- Source: `58891f85203090cec4fc6b85385f6b825fa00beb`.
-- Release workflow: https://github.com/cybericebox/test-exercises/actions/runs/38935904509 (all jobs passed).
-- Published image index: `sha256:036d7aeb7485bd61ede07c71d26242663bccb8b852ba939542e432842b24c7c4`; both Linux architectures, `v1.0.0` and `latest` agree.
-- Downloaded release archives match local bytes, SHA-256 and the real daemon validator.
-- The pulled published image passes proxy HTTP, actual WireGuard HTTP, SSH, non-root identity, internet, flag separation and shutdown checks.
-- No production Laboratory deployment was performed.
+The owner approved a two-page archive/message exercise, a downloadable Base64 runtime flag, and a static Go XOR recovery task. Palette and runtime topology remain as before. The approved replacement uses the existing `v1.0.0` and `latest` tags; old release assets, old build artifact and superseded image manifests are removed only after the replacement is ready and verified.
+
+Local checks cover both exercise solutions, reproducible import archives, the real daemon validator, the proxy/WireGuard/SSH/internet paths, desktop/mobile screenshots and a fresh final review. Publication checks and exact image digests are recorded by the GitHub release workflow and the private operational verification record. No production Laboratory deployment is part of this release.
