@@ -21,4 +21,14 @@ Ukrainian challenge copy. Static flag fixed; WEB_FLAG and SSH_FLAG platform temp
 - [x] Write tests and standard exercise descriptors; build checksummed ZIPs and validate with the real daemon codec/domain.
 - [x] Implement image, entrypoint and the Ukrainian page; verify both service flags and lifecycle.
 - [x] Run isolated proxy/VPN/internet smoke checks and desktop/mobile visual review.
-- [ ] Configure public GitHub repository and Docker Hub publishing; publish v1.0.0 and verify image/archive downloads.
+- [x] Configure public GitHub repository and Docker Hub publishing; publish v1.0.0 and verify image/archive downloads.
+
+## Verified release
+
+- Release: https://github.com/cybericebox/test-exercises/releases/tag/v1.0.0
+- Source: `58891f85203090cec4fc6b85385f6b825fa00beb`.
+- Release workflow: https://github.com/cybericebox/test-exercises/actions/runs/38935904509 (all jobs passed).
+- Published image index: `sha256:036d7aeb7485bd61ede07c71d26242663bccb8b852ba939542e432842b24c7c4`; both Linux architectures, `v1.0.0` and `latest` agree.
+- Downloaded release archives match local bytes, SHA-256 and the real daemon validator.
+- The pulled published image passes proxy HTTP, actual WireGuard HTTP, SSH, non-root identity, internet, flag separation and shutdown checks.
+- No production Laboratory deployment was performed.
