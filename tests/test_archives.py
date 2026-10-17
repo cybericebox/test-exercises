@@ -32,7 +32,8 @@ class Archives(unittest.TestCase):
                 )
                 if name == "static":
                     task = variant["tasks"][0]
-                    self.assertFalse(task.get("linked_device_id"))
+                    self.assertNotIn("linked_device", task)
+                    self.assertNotIn("linked_device_id", task)
                     self.assertEqual(
                         task["attachments"], [{"file": "files/welcome.go"}]
                     )

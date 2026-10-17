@@ -1,11 +1,11 @@
 package exercise_test
 
 import (
-	"crypto/rand"
 	"encoding/json"
 	model "github.com/cybericebox/daemon/internal/model/exercise"
 	"github.com/cybericebox/daemon/internal/model/flagpattern"
 	codec "github.com/cybericebox/daemon/internal/useCase/exercise"
+	"math/big"
 	"os"
 	"path/filepath"
 	"strings"
@@ -44,13 +44,12 @@ func TestPortableDemoArtifacts(t *testing.T) {
 					if p.Cardinality().BitLen() < 97 {
 						t.Fatal("at least 96 random flag bits required")
 					}
-					offset, err := rand.Int(rand.Reader, p.Cardinality())
-					if err != nil {
-						t.Fatal(err)
-					}
-					flag, err := p.At(offset)
-					if err != nil || !strings.HasPrefix(flag, "ICE{") {
-						t.Fatal("flag materialization failed", err)
+					last := new(big.Int).Sub(p.Cardinality(), big.NewInt(1))
+					for _, offset := range []*big.Int{big.NewInt(0), last} {
+						flag, err := p.At(offset)
+						if err != nil || !strings.HasPrefix(flag, "ICE{") {
+							t.Fatal("flag materialization failed", err)
+						}
 					}
 				}
 				for _, attachment := range task.Attachments {
