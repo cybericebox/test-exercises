@@ -11,10 +11,8 @@ ROOT = pathlib.Path(__file__).resolve().parents[1]
 class StaticRecovery(unittest.TestCase):
     def test_go_attachment_restores_the_configured_flag(self):
         exercise = json.loads((ROOT / "static/exercise.json").read_text())
-        task = exercise["versions"][0]["Variants"][0]["tasks"][0]
-        source = (
-            ROOT / "static/files" / task["attachments"][0]["file_id"] / "welcome.go"
-        )
+        task = exercise["versions"][0]["variants"][0]["tasks"][0]
+        source = ROOT / "static" / task["attachments"][0]["file"]
         with tempfile.TemporaryDirectory() as directory:
             folder = pathlib.Path(directory)
             shutil.copy(source, folder / "welcome.go")

@@ -1,139 +1,30 @@
 {
-  "format": "cib-exercise/v1",
+  "schema": "cib-exercise/1",
   "exercise": {
-    "ID": "01b28c1b-7df2-5e5d-a77f-9ac0f47db0fa",
-    "Name": "Журнал зв’язку: веб і SSH",
-    "Description": "Відновіть повідомлення з архіву та знайдіть другий прапор через SSH. Веб доступний через проксі або VPN.",
-    "Tags": [
+    "name": "Журнал зв’язку: веб і SSH",
+    "description": "Відновіть повідомлення з архіву та знайдіть другий прапор через SSH. Веб доступний через проксі або VPN.",
+    "tags": [
       "тестове",
       "демонстрація"
-    ],
-    "Scope": 0,
-    "AccessLevel": 0
+    ]
   },
   "versions": [
     {
-      "ID": "2643d2ba-f843-58f5-8441-81edad4ceca7",
-      "ExerciseID": "01b28c1b-7df2-5e5d-a77f-9ac0f47db0fa",
-      "Status": "published",
-      "AdminNote": "Демонстраційний набір v1.0.0",
-      "Label": "",
-      "Variants": [
+      "status": "published",
+      "admin_note": "Демонстраційний набір v1.0.0",
+      "variants": [
         {
-          "id": "41bb58ea-24ac-54ad-bfa7-3372120df252",
           "index": 1,
-          "note": "",
           "tasks": [
             {
-              "id": "206e8a3b-8083-582e-8a68-024bd42675b9",
               "name": "Передача Р-17",
               "difficulty": "elementary",
+              "description": "Запустіть середовище та відкрийте вебсторінку через проксі: {{web_proxy}}. VPN для цього способу не потрібен.\n\nЩоб перевірити VPN, підключіться за інструкцією у вікні VPN та відкрийте ту саму сторінку: {{web_vpn}}.\n\nУ журналі є переданий пакет. Перегляньте нотатку, знайдіть вкладення та відновіть початковий текст повідомлення. Отриманий прапор надішліть як відповідь.",
               "flag": [
                 "template:ICE{web_[a-f0-9][a-f0-9][a-f0-9][a-f0-9][a-f0-9][a-f0-9][a-f0-9][a-f0-9][a-f0-9][a-f0-9][a-f0-9][a-f0-9][a-f0-9][a-f0-9][a-f0-9][a-f0-9][a-f0-9][a-f0-9][a-f0-9][a-f0-9][a-f0-9][a-f0-9][a-f0-9][a-f0-9]}"
               ],
-              "linked_device_id": "00af82ca-1b2b-5d91-a05d-f396a1bdd0f8",
+              "linked_device": "welcome",
               "device_flag_var": "WEB_FLAG",
-              "description": {
-                "root": {
-                  "type": "root",
-                  "version": 1,
-                  "direction": null,
-                  "format": "",
-                  "indent": 0,
-                  "children": [
-                    {
-                      "type": "paragraph",
-                      "version": 1,
-                      "direction": null,
-                      "format": "",
-                      "indent": 0,
-                      "textFormat": 0,
-                      "textStyle": "",
-                      "children": [
-                        {
-                          "type": "text",
-                          "version": 1,
-                          "text": "Запустіть середовище та відкрийте вебсторінку через проксі: ",
-                          "detail": 0,
-                          "format": 0,
-                          "mode": "normal",
-                          "style": ""
-                        },
-                        {
-                          "type": "variable",
-                          "version": 1,
-                          "varName": "web_proxy",
-                          "formats": []
-                        },
-                        {
-                          "type": "text",
-                          "version": 1,
-                          "text": ". VPN для цього способу не потрібен.",
-                          "detail": 0,
-                          "format": 0,
-                          "mode": "normal",
-                          "style": ""
-                        }
-                      ]
-                    },
-                    {
-                      "type": "paragraph",
-                      "version": 1,
-                      "direction": null,
-                      "format": "",
-                      "indent": 0,
-                      "textFormat": 0,
-                      "textStyle": "",
-                      "children": [
-                        {
-                          "type": "text",
-                          "version": 1,
-                          "text": "Щоб перевірити VPN, підключіться за інструкцією у вікні VPN та відкрийте ту саму сторінку: ",
-                          "detail": 0,
-                          "format": 0,
-                          "mode": "normal",
-                          "style": ""
-                        },
-                        {
-                          "type": "variable",
-                          "version": 1,
-                          "varName": "web_vpn",
-                          "formats": []
-                        },
-                        {
-                          "type": "text",
-                          "version": 1,
-                          "text": ".",
-                          "detail": 0,
-                          "format": 0,
-                          "mode": "normal",
-                          "style": ""
-                        }
-                      ]
-                    },
-                    {
-                      "type": "paragraph",
-                      "version": 1,
-                      "direction": null,
-                      "format": "",
-                      "indent": 0,
-                      "textFormat": 0,
-                      "textStyle": "",
-                      "children": [
-                        {
-                          "type": "text",
-                          "version": 1,
-                          "text": "У журналі є переданий пакет. Перегляньте нотатку, знайдіть вкладення та відновіть початковий текст повідомлення. Отриманий прапор надішліть як відповідь.",
-                          "detail": 0,
-                          "format": 0,
-                          "mode": "normal",
-                          "style": ""
-                        }
-                      ]
-                    }
-                  ]
-                }
-              },
               "placeholders": [
                 {
                   "key": "web_proxy",
@@ -152,91 +43,14 @@
               ]
             },
             {
-              "id": "0d2dd4b9-d631-541e-babe-bddb74541482",
               "name": "Підключення через SSH",
               "difficulty": "elementary",
+              "description": "Підключіться до VPN. У терміналі виконайте команду: ssh -p 2222 demo@{{server_ip}}\n\nПароль демонстраційного користувача: cybericebox. Прапор збережено у файлі flag.txt у його домашній папці.\n\nНадішліть другий прапор як відповідь. Для перевірки виходу в інтернет можна виконати: curl -I https://example.com.",
               "flag": [
                 "template:ICE{ssh_[a-f0-9][a-f0-9][a-f0-9][a-f0-9][a-f0-9][a-f0-9][a-f0-9][a-f0-9][a-f0-9][a-f0-9][a-f0-9][a-f0-9][a-f0-9][a-f0-9][a-f0-9][a-f0-9][a-f0-9][a-f0-9][a-f0-9][a-f0-9][a-f0-9][a-f0-9][a-f0-9][a-f0-9]}"
               ],
-              "linked_device_id": "00af82ca-1b2b-5d91-a05d-f396a1bdd0f8",
+              "linked_device": "welcome",
               "device_flag_var": "SSH_FLAG",
-              "description": {
-                "root": {
-                  "type": "root",
-                  "version": 1,
-                  "direction": null,
-                  "format": "",
-                  "indent": 0,
-                  "children": [
-                    {
-                      "type": "paragraph",
-                      "version": 1,
-                      "direction": null,
-                      "format": "",
-                      "indent": 0,
-                      "textFormat": 0,
-                      "textStyle": "",
-                      "children": [
-                        {
-                          "type": "text",
-                          "version": 1,
-                          "text": "Підключіться до VPN. У терміналі виконайте команду: ssh -p 2222 demo@",
-                          "detail": 0,
-                          "format": 0,
-                          "mode": "normal",
-                          "style": ""
-                        },
-                        {
-                          "type": "variable",
-                          "version": 1,
-                          "varName": "server_ip",
-                          "formats": []
-                        }
-                      ]
-                    },
-                    {
-                      "type": "paragraph",
-                      "version": 1,
-                      "direction": null,
-                      "format": "",
-                      "indent": 0,
-                      "textFormat": 0,
-                      "textStyle": "",
-                      "children": [
-                        {
-                          "type": "text",
-                          "version": 1,
-                          "text": "Пароль демонстраційного користувача: cybericebox. Прапор збережено у файлі flag.txt у його домашній папці.",
-                          "detail": 0,
-                          "format": 0,
-                          "mode": "normal",
-                          "style": ""
-                        }
-                      ]
-                    },
-                    {
-                      "type": "paragraph",
-                      "version": 1,
-                      "direction": null,
-                      "format": "",
-                      "indent": 0,
-                      "textFormat": 0,
-                      "textStyle": "",
-                      "children": [
-                        {
-                          "type": "text",
-                          "version": 1,
-                          "text": "Надішліть другий прапор як відповідь. Для перевірки виходу в інтернет можна виконати: curl -I https://example.com.",
-                          "detail": 0,
-                          "format": 0,
-                          "mode": "normal",
-                          "style": ""
-                        }
-                      ]
-                    }
-                  ]
-                }
-              },
               "placeholders": [
                 {
                   "key": "server_ip",
@@ -259,7 +73,6 @@
             },
             "devices": [
               {
-                "id": "00af82ca-1b2b-5d91-a05d-f396a1bdd0f8",
                 "name": "welcome",
                 "type": "container",
                 "image": "cybericebox/test-exercises:v1.0.0",
@@ -315,8 +128,8 @@
                   },
                   {
                     "kind": "device",
-                    "device_id": "00af82ca-1b2b-5d91-a05d-f396a1bdd0f8",
-                    "interface": "eth0"
+                    "interface": "eth0",
+                    "device": "welcome"
                   }
                 ]
               },
@@ -328,17 +141,15 @@
                   },
                   {
                     "kind": "device",
-                    "device_id": "00af82ca-1b2b-5d91-a05d-f396a1bdd0f8",
-                    "interface": "eth1"
+                    "interface": "eth1",
+                    "device": "welcome"
                   }
                 ]
               }
             ]
           }
         }
-      ],
-      "CreatedAt": "2026-10-16T00:00:00Z",
-      "PublishedAt": "2026-10-16T00:00:00Z"
+      ]
     }
   ]
 }

@@ -11,7 +11,7 @@ descriptor = json.loads((root / "dynamic/exercise.json").read_text())
 images = {
     device["image"]
     for version in descriptor["versions"]
-    for variant in version["Variants"]
+    for variant in version["variants"]
     for device in variant["topology"]["devices"]
 }
 expected = {"cybericebox/test-exercises:" + tag}
