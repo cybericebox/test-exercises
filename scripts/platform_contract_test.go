@@ -44,13 +44,17 @@ func TestPortableDemoArtifacts(t *testing.T) {
 					if p.Cardinality().BitLen() < 97 {
 						t.Fatal("at least 96 random flag bits required")
 					}
-					flag, err := p.Generate(rand.Reader)
+					offset, err := rand.Int(rand.Reader, p.Cardinality())
+					if err != nil {
+						t.Fatal(err)
+					}
+					flag, err := p.At(offset)
 					if err != nil || !strings.HasPrefix(flag, "ICE{") {
 						t.Fatal("flag materialization failed", err)
 					}
 				}
 				for _, attachment := range task.Attachments {
-					if len(archive.Files["files/"+attachment.FileID.String()+"/"+attachment.Name]) == 0 {
+					if attachment.Name == "" || len(archive.Files[archive.FilePaths[attachment.FileID]]) == 0 {
 						t.Fatal("imported static attachment is missing")
 					}
 				}

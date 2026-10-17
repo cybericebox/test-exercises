@@ -1,5 +1,7 @@
 #!/usr/bin/env python3
-"""Build reproducible cib-exercise/v1 archives, including the standard SHA-256 manifest."""
+"""Build reproducible cib-exercise/1 archives: one zip per task (task at the zip root) and one bundle with a folder per task.
+
+Every archive carries a single root manifest.json with SHA-256 sums."""
 
 import hashlib, json, pathlib, zipfile
 
