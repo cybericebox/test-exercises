@@ -23,7 +23,7 @@ func TestPortableDemoArtifacts(t *testing.T) {
 			if err != nil {
 				t.Fatal(err)
 			}
-			archive, err := codec.ParseExerciseArchive(body, "")
+			archive, err := codec.ParseExerciseArchive(body, "", codec.DefaultLimits())
 			if err != nil {
 				t.Fatal(err)
 			}
@@ -64,7 +64,7 @@ func TestPortableDemoArtifacts(t *testing.T) {
 	if err != nil {
 		t.Fatal(err)
 	}
-	expanded, err := codec.ExpandExerciseArchiveBundle(bundle, "")
+	expanded, err := codec.ExpandExerciseArchiveBundle(bundle, "", codec.DefaultLimits())
 	if err != nil || len(expanded) != 2 {
 		t.Fatal("bundle must import as two exercises", err)
 	}
