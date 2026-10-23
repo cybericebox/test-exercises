@@ -21,7 +21,7 @@ jobs:
       - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
         with:
           repository: cybericebox/daemon
-          ref: ab23a5317e3fbec465439d20094d02d842c84f7d
+          ref: e5a275ca0afac653d92b7f436be6d6e7da4ccb98
           path: _platform
       - run: DAEMON_SOURCE="$GITHUB_WORKSPACE/_platform" bash scripts/validate-platform.sh
       - name: Check release image pin

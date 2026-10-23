@@ -77,7 +77,7 @@
                 "type": "container",
                 "image": "cybericebox/test-exercises:v1.0.0",
                 "resource_preset": "micro",
-                "security_preset": "basic",
+                "security_preset": "standard",
                 "interfaces": [
                   {
                     "name": "eth0",
