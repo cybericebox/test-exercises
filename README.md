@@ -1,72 +1,72 @@
-# Тестові завдання Cyber ICE Box
+# test-exercises
 
-Два готові приклади для перевірки участі, імпорту завдань і мережевого підключення.
+Two small example tasks for the Cyber&nbsp;ICE&nbsp;Box platform. They show what a task archive looks like and give a
+fresh installation something to import, start and solve, so that every part of the path (flag check, web through the
+proxy and VPN, SSH, internet access) can be tried end to end.
 
-| Приклад | Що перевіряємо | Прапори |
-| --- | --- | --- |
-| `static/` — «Загублений пакет» | Відновлення повідомлення з Go-файлу | Один фіксований |
-| `dynamic/` — «Журнал зв’язку» | Веб через проксі або VPN, SSH через VPN, вихід в інтернет | Два шаблонні, незалежні |
+## The examples
 
-## Імпорт
+| Example | Kind | What the participant does |
+|---|---|---|
+| `static` ("Загублений пакет") | Static task with an attachment | Reads `welcome.go`, recovers a masked message and submits the flag |
+| `dynamic` ("Журнал зв’язку: веб і SSH") | Task with a running machine | Opens a web page through the proxy or the VPN and recovers a message, then connects over SSH for a second flag |
 
-Завантажте архіви з [останнього релізу](https://github.com/cybericebox/test-exercises/releases/latest):
+The dynamic example runs one container image. Its two flags are templates; the platform passes the real values when
+the lab starts. Flags always have the form `ICE{...}`.
 
-- `static.zip` та `dynamic.zip` — окремі завдання;
-- `test-exercises.zip` — обидва завдання одним імпортом;
-- `SHA256SUMS` — контрольні суми архівів.
+## Layout
 
-Архіви відповідають формату `cib-exercise/1` (`schema: cib-exercise/1`): `exercise.json` у корені теки завдання, вкладення за шляхами відносно цієї теки (`files/welcome.go`), `manifest.json` із SHA-256 у корені архіву. `static.zip` і `dynamic.zip` містять по одному завданню в корені; `test-exercises.zip` містить теки `static/` і `dynamic/` та один `manifest.json`. У репозиторії зберігаються вихідні JSON та файли, архіви формуються автоматично.
+| Path | Contents |
+|---|---|
+| `static/` | `exercise.json` and `files/welcome.go` |
+| `dynamic/` | `exercise.json`, `Dockerfile`, nginx and sshd config, `runtime.py`, `site/` (the web pages) |
+| `scripts/package.py` | Builds the import archives |
+| `scripts/smoke.py` | Runs the image in isolated Docker networks with a real WireGuard tunnel, an HTTP proxy and SSH |
+| `scripts/validate-platform.sh` | Checks the archives against the platform's exercise validator |
+| `scripts/check-release.py` | Checks that a release tag matches the image pinned in the descriptor |
+| `tests/` | Unit tests for the archives, the runtime and the static task |
 
-Повний опис ключів і меж формату міститься в прикладі daemon `internal/useCase/exercise/example/exercise.yaml` (його ж завантажує кнопка «Приклад архіву» в діалозі «Імпорт завдань»). Обидва приклади мають по одному варіанту, тому ключі варіантів із daemon v2.19 тут не використовуються: `weight` (як часто варіант видається відносно інших, 1–100, типово 1; за ваг 2 і 1 порядок видачі 1, 2, 1, 1, 2, 1, …) і `device_images` повʼязаного варіанта (власний образ для окремого контейнера основного варіанта). Пристрій може мати не більше 64 змінних оточення (`env_vars`); у динамічному прикладі прапори передаються через `device_flag_var`. Профіль безпеки контейнера (`security_preset`) — лише `standard` або `extended`.
+## Build the archives
 
-Статичний приклад містить Go-файл `welcome.go`: масив байтів, маску XOR та функцію `restore`. Учасник має відновити початковий текст. Прапор фіксований, але відкритим рядком у вкладенні не зберігається. Звичайний запуск показує підказку; для розв’язання достатньо прочитати код і застосувати операцію XOR або викликати надану функцію.
-
-Динамічний приклад містить одну спільну топологію та два завдання. Платформа генерує значення із шаблонів `template:ICE{web_…}` і `template:ICE{ssh_…}` та передає їх контейнеру через `WEB_FLAG` і `SSH_FLAG`. Кожен шаблон має 96 біт випадковості. Вебчастина складається з двох сторінок: журналу та картки передачі Р-17. У вкладенні `packet.txt` міститься прапор, закодований у Base64. Учасник завантажує файл і відновлює початковий текст; пряма кнопка видачі прапора відсутня. Другий прапор читається через SSH із `~/flag.txt`. Значення не вбудовані в образ; без обох коректних прапорів він не запуститься.
-
-## Мережа динамічного завдання
-
-| Шлях | Адреса / порт |
-| --- | --- |
-| Публічний HTTP-проксі платформи | `external.link` → контейнер, TCP 8080 |
-| Веб через VPN | VPN-адреса контейнера, TCP 8080 |
-| SSH через VPN | VPN-адреса контейнера, TCP 2222 |
-| Вихід в інтернет | Друга мережа та шлюз Laboratory |
-
-Контейнер має VPN-інтерфейс `eth0` та інтернет-інтерфейс `eth1`. Адреси й шлюзи визначаються посиланнями на виділені платформою мережі. Зворотний маршрут до VPN-клієнтів задано для стандартного пулу Laboratory `10.128.0.0/10`; якщо інсталяція використовує інший пул, змініть `routes[].dst` у `dynamic/exercise.json` перед імпортом.
-
-Обидва шлюзи забезпечує Laboratory — вони не запускаються всередині образу. Завданню потрібні виділені заходу динамічні ресурси, VPN та інтернет-мережа. Без цих ресурсів динамічний приклад недоступний. Контейнер не потребує додаткового `NET_ADMIN` у платформі.
-
-SSH: користувач `demo`, навчальний пароль `cybericebox`, прапор у `~/flag.txt`. Це навмисно публічний навчальний обліковий запис без прав root; не використовуйте цей пароль для інших систем. Перенаправлення SSH портів, агентів і тунелів вимкнені. Ключі сервера створюються при запуску. Веб не віддає SSH-прапор.
-
-## Локальний запуск
-
-Потрібні Docker, Python 3 та Go 1.27 або новіший для перевірки Go-вкладення.
-
-```sh
-make test
+```bash
 make package
-make build
-
-docker run --rm -p 127.0.0.1:8080:8080 -p 127.0.0.1:2222:2222 \
-  -e 'WEB_FLAG=ICE{web_local_example}' \
-  -e 'SSH_FLAG=ICE{ssh_local_example}' \
-  cybericebox/test-exercises:local
 ```
 
-Веб: `http://127.0.0.1:8080`. SSH: `ssh -p 2222 demo@127.0.0.1`. Локальні значення вище — приклади; у Laboratory значення генерує платформа. Команда SSH на вебсторінці показує внутрішню VPN-адресу контейнера, тому локально використовуйте адресу хоста з цієї інструкції.
+This writes to `dist/` (not tracked):
 
-```sh
-make smoke
-```
+| File | Contents |
+|---|---|
+| `static.zip`, `dynamic.zip` | One task each, with `exercise.json` at the zip root |
+| `test-exercises.zip` | Both tasks, one folder per task |
+| `SHA256SUMS` | Checksums of the zip files |
 
-Ізольована перевірка створює тимчасові Docker-мережі, HTTP-проксі та справжній тунель WireGuard, перевіряє обидва прапори, SSH без root, інтернет і коректне завершення. Потрібні Linux-контейнери з підтримкою WireGuard у ядрі (зокрема Docker Desktop). Тестові шлюз і клієнт отримують `NET_ADMIN`; тестовому контейнеру він потрібен лише для встановлення маршрутів замість вузла Laboratory. Тест видаляє лише власні тимчасові ресурси. Це перевірка контейнера та мережевих шляхів, а не розгортання у виробничому Laboratory.
+Every archive carries a `manifest.json` with SHA-256 sums of its files. The build is reproducible: the same sources
+give the same bytes.
 
-Формат імпорту додатково перевіряється справжнім валідатором daemon `v2.19.1`, commit `e5a275ca0afac653d92b7f436be6d6e7da4ccb98`. CI використовує окрему копію вихідного коду daemon; робочі репозиторії платформи не змінюються.
+## Import into the platform
 
-## Образи та релізи
+Import the zip through the platform's exercise import: `static.zip` or `dynamic.zip` for one task, or
+`test-exercises.zip` for both. Then start the task in a test lab or add it to an event.
 
-[Docker Hub: cybericebox/test-exercises](https://hub.docker.com/r/cybericebox/test-exercises), архітектури `linux/amd64` та `linux/arm64`. Імпорт прив’язаний до версії `v1.0.0`; `latest` також публікується для зручності локального перегляду.
+The dynamic task needs the container image named in `dynamic/exercise.json` (`cybericebox/test-exercises`). A release
+publishes it for `linux/amd64` and `linux/arm64`.
 
-Для нового релізу змініть версію образу в `dynamic/exercise.json`, виконайте перевірки та створіть відповідний тег `vX.Y.Z`. GitHub Actions перевірить збіг версії, збере й перевірить обидві архітектури, опублікує образ і додасть архіви до GitHub Release. Налаштування репозиторію: секрети `DOCKERHUB_USERNAME`, `DOCKERHUB_TOKEN` із правом публікації цього образу. Невдалі перевірки блокують публікацію.
+## Development commands
 
-Ліцензія: Apache-2.0.
+| Command | What it does |
+|---|---|
+| `make test` | Python unit tests, and runs `welcome.go` to check the static flag |
+| `make package` | Builds the archives into `dist/` |
+| `make build` | Builds the dynamic image as `cybericebox/test-exercises:local` (needs Docker) |
+| `make smoke` | Builds the test-tools image and runs `scripts/smoke.py` (needs Docker) |
+
+`make test` needs Python 3 and Go.
+
+## Releases
+
+A tag `vX.Y.Z` runs the checks, publishes the image and attaches the archives and `SHA256SUMS` to the GitHub release
+(`.github/workflows/release.yml`). The text of the release page is `RELEASE_NOTES.md`.
+
+## License
+
+See [LICENSE](LICENSE). The font in `dynamic/site/fonts` has its own license, in `dynamic/site/fonts/OFL.txt`.
