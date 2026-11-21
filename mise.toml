@@ -4,6 +4,9 @@
 #   mise run <task> ...     run one
 
 [tools]
+gitleaks = "8.30.1"   # lint:leaks: the secret scan of the whole history (.gitleaks.toml)
+actionlint = "1.7.12"   # lint:leaks: the GitHub workflows
+shellcheck = "0.11.0"   # actionlint checks the run: scripts with it
 go = "1.27.4"
 python = "3.14"
 
@@ -25,3 +28,11 @@ run = [
   "docker build -f tasks/dynamic/Dockerfile --target test-tools -t cib-test-exercises:tools .",
   "CIB_DEMO_IMAGE=cybericebox/test-exercises:local python3 tools/smoke.py",
 ]
+
+[tasks."lint:leaks"]
+description = "gitleaks over the whole history (.gitleaks.toml) and actionlint over the workflows"
+run = ["gitleaks git --redact --no-banner --log-level warn", "actionlint"]
+
+[tasks.lint]
+description = "The lints of this repository"
+run = [{ task = "lint:leaks" }]
