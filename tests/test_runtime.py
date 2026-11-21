@@ -1,7 +1,7 @@
 import base64, importlib.util, pathlib, tempfile, unittest
 
 ROOT = pathlib.Path(__file__).resolve().parents[1]
-spec = importlib.util.spec_from_file_location("runtime", ROOT / "dynamic/runtime.py")
+spec = importlib.util.spec_from_file_location("runtime", ROOT / "tasks/dynamic/runtime.py")
 runtime = importlib.util.module_from_spec(spec)
 spec.loader.exec_module(runtime)
 
@@ -15,7 +15,7 @@ class Runtime(unittest.TestCase):
         ]:
             with self.assertRaises(ValueError):
                 runtime.materialize(
-                    env, pathlib.Path(tempfile.mkdtemp()), ROOT / "dynamic/site"
+                    env, pathlib.Path(tempfile.mkdtemp()), ROOT / "tasks/dynamic/site"
                 )
 
     def test_packet_recovers_the_runtime_flag_without_exposing_ssh(self):
@@ -28,7 +28,7 @@ class Runtime(unittest.TestCase):
                     "VPN_ADDRESS": '10.128.1.10"><script>',
                 },
                 path,
-                ROOT / "dynamic/site",
+                ROOT / "tasks/dynamic/site",
             )
             packet = (path / "site/files/packet.txt").read_text()
             self.assertEqual(

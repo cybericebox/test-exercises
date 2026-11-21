@@ -18,12 +18,12 @@ the lab starts. Flags always have the form `ICE{...}`.
 
 | Path | Contents |
 |---|---|
-| `static/` | `exercise.json` and `files/welcome.go` |
-| `dynamic/` | `exercise.json`, `Dockerfile`, nginx and sshd config, `runtime.py`, `site/` (the web pages) |
-| `scripts/package.py` | Builds the import archives |
-| `scripts/smoke.py` | Runs the image in isolated Docker networks with a real WireGuard tunnel, an HTTP proxy and SSH |
-| `scripts/validate-platform.sh` | Checks the archives against the platform's exercise validator |
-| `scripts/check-release.py` | Checks that a release tag matches the image pinned in the descriptor |
+| `tasks/static/` | `exercise.json` and `files/welcome.go` |
+| `tasks/dynamic/` | `exercise.json`, `Dockerfile`, nginx and sshd config, `runtime.py`, `site/` (the web pages) |
+| `tools/package.py` | Builds the import archives |
+| `tools/smoke.py` | Runs the image in isolated Docker networks with a real WireGuard tunnel, an HTTP proxy and SSH |
+| `tools/validate-platform.sh` | Checks the archives against the platform's exercise validator |
+| `tools/check-release.py` | Checks that a release tag matches the image pinned in the descriptor |
 | `tests/` | Unit tests for the archives, the runtime and the static task |
 
 ## Build the archives
@@ -48,7 +48,7 @@ give the same bytes.
 Import the zip through the platform's exercise import: `static.zip` or `dynamic.zip` for one task, or
 `test-exercises.zip` for both. Then start the task in a test lab or add it to an event.
 
-The dynamic task needs the container image named in `dynamic/exercise.json` (`cybericebox/test-exercises`). A release
+The dynamic task needs the container image named in `tasks/dynamic/exercise.json` (`cybericebox/test-exercises`). A release
 publishes it for `linux/amd64` and `linux/arm64`.
 
 ## Development commands
@@ -58,7 +58,7 @@ publishes it for `linux/amd64` and `linux/arm64`.
 | `mise run test` | Python unit tests, and runs `welcome.go` to check the static flag |
 | `mise run package` | Builds the archives into `dist/` |
 | `mise run build` | Builds the dynamic image as `cybericebox/test-exercises:local` (needs Docker) |
-| `mise run smoke` | Builds the test-tools image and runs `scripts/smoke.py` (needs Docker) |
+| `mise run smoke` | Builds the test-tools image and runs `tools/smoke.py` (needs Docker) |
 
 `mise run test` needs Python 3 and Go.
 
@@ -69,4 +69,4 @@ A tag `vX.Y.Z` runs the checks, publishes the image and attaches the archives an
 
 ## License
 
-See [LICENSE](LICENSE). The font in `dynamic/site/fonts` has its own license, in `dynamic/site/fonts/OFL.txt`.
+See [LICENSE](LICENSE). The font in `tasks/dynamic/site/fonts` has its own license, in `tasks/dynamic/site/fonts/OFL.txt`.
