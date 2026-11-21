@@ -4,7 +4,7 @@
 #   mise run <task> ...     run one
 
 [tools]
-go = "1.27.1"
+go = "1.27.4"
 python = "3.14"
 
 [tasks.test]
