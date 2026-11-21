@@ -13,11 +13,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
-      - uses: actions/setup-go@40f1582b2485089dde7abd97c1529aa768e1baff
-        with:
-          go-version: '1.27.1'
-          cache: false
-      - run: make test package
+      - uses: jdx/mise-action@90f833d396d0cc3674b631d2d225e306476c303a # v5.2.10
+      - run: mise run test ::: package
       - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
         with:
           repository: cybericebox/daemon

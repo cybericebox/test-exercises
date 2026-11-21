@@ -1,0 +1,27 @@
+# mise: the pinned tools of this repository and its commands. One entry point for developers, agents and CI.
+#   mise install            install exactly these tool versions (once, and after this file changes)
+#   mise tasks              list the commands
+#   mise run <task> ...     run one
+
+[tools]
+go = "1.27.1"
+python = "3.14"
+
+[tasks.test]
+description = "The unit tests of the scripts and the static example program"
+run = ["python3 -m unittest discover -s tests -v", "go run $(find static/files -name welcome.go)"]
+
+[tasks.package]
+description = "Build the exercise archives into dist/"
+run = "python3 scripts/package.py"
+
+[tasks.build]
+description = "Build the image of the dynamic exercises (Docker)"
+run = "docker build -f dynamic/Dockerfile -t cybericebox/test-exercises:local ."
+
+[tasks.smoke]
+description = "Build the test tools image and run the smoke test against the local image (Docker)"
+run = [
+  "docker build -f dynamic/Dockerfile --target test-tools -t cib-test-exercises:tools .",
+  "CIB_DEMO_IMAGE=cybericebox/test-exercises:local python3 scripts/smoke.py",
+]
