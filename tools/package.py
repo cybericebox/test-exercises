@@ -34,7 +34,7 @@ def main():
     out.mkdir(exist_ok=True)
     bundle = {}
     for name in ["static", "dynamic"]:
-        folder = ROOT / name
+        folder = ROOT / "tasks" / name
         files = {"exercise.json": (folder / "exercise.json").read_bytes()}
         if (folder / "files").exists():
             files.update(

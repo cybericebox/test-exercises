@@ -15,7 +15,7 @@ def linked_files(data):
 
 class Archives(unittest.TestCase):
     def test_import_archives_and_flags(self):
-        subprocess.run(["python3", str(ROOT / "scripts/package.py")], check=True)
+        subprocess.run(["python3", str(ROOT / "tools/package.py")], check=True)
         for name in ["static", "dynamic"]:
             with zipfile.ZipFile(ROOT / "dist" / f"{name}.zip") as z:
                 manifest = json.loads(z.read("manifest.json"))
@@ -78,7 +78,7 @@ class Archives(unittest.TestCase):
                     )
 
     def test_bundle_has_task_folders_and_one_root_manifest(self):
-        subprocess.run(["python3", str(ROOT / "scripts/package.py")], check=True)
+        subprocess.run(["python3", str(ROOT / "tools/package.py")], check=True)
         with zipfile.ZipFile(ROOT / "dist/test-exercises.zip") as z:
             names = z.namelist()
             self.assertEqual([n for n in names if n.endswith("manifest.json")], ["manifest.json"])
@@ -101,9 +101,9 @@ class Archives(unittest.TestCase):
             )
 
     def test_reproducible_archives(self):
-        subprocess.run(["python3", str(ROOT / "scripts/package.py")], check=True)
+        subprocess.run(["python3", str(ROOT / "tools/package.py")], check=True)
         before = {p.name: p.read_bytes() for p in (ROOT / "dist").glob("*.zip")}
-        subprocess.run(["python3", str(ROOT / "scripts/package.py")], check=True)
+        subprocess.run(["python3", str(ROOT / "tools/package.py")], check=True)
         self.assertTrue(
             all((ROOT / "dist" / n).read_bytes() == v for n, v in before.items())
         )

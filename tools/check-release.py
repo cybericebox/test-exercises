@@ -7,7 +7,7 @@ root = pathlib.Path(__file__).resolve().parents[1]
 tag = os.environ["RELEASE_TAG"]
 if not re.fullmatch(r"v[0-9]+\.[0-9]+\.[0-9]+", tag):
     raise SystemExit("Only stable vX.Y.Z releases are supported")
-descriptor = json.loads((root / "dynamic/exercise.json").read_text())
+descriptor = json.loads((root / "tasks/dynamic/exercise.json").read_text())
 images = {
     device["image"]
     for version in descriptor["versions"]

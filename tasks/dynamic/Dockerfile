@@ -8,10 +8,10 @@ RUN apk add --no-cache nginx openssh-server python3 curl iproute2 ca-certificate
  && chmod 750 /home/demo \
  && mkdir -p /run/sshd /opt/demo \
  && rm -f /etc/ssh/ssh_host_*_key*
-COPY dynamic/nginx.conf /etc/nginx/nginx.conf
-COPY dynamic/sshd_config /etc/ssh/sshd_config
-COPY dynamic/runtime.py /opt/demo/runtime.py
-COPY dynamic/site /opt/demo/site
+COPY tasks/dynamic/nginx.conf /etc/nginx/nginx.conf
+COPY tasks/dynamic/sshd_config /etc/ssh/sshd_config
+COPY tasks/dynamic/runtime.py /opt/demo/runtime.py
+COPY tasks/dynamic/site /opt/demo/site
 EXPOSE 8080 2222
 HEALTHCHECK --interval=5s --timeout=2s --start-period=5s --retries=5 CMD curl -fsS http://127.0.0.1:8080/healthz || exit 1
 ENTRYPOINT ["python3", "/opt/demo/runtime.py"]
