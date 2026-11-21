@@ -29,7 +29,7 @@ the lab starts. Flags always have the form `ICE{...}`.
 ## Build the archives
 
 ```bash
-make package
+mise run package
 ```
 
 This writes to `dist/` (not tracked):
@@ -55,12 +55,12 @@ publishes it for `linux/amd64` and `linux/arm64`.
 
 | Command | What it does |
 |---|---|
-| `make test` | Python unit tests, and runs `welcome.go` to check the static flag |
-| `make package` | Builds the archives into `dist/` |
-| `make build` | Builds the dynamic image as `cybericebox/test-exercises:local` (needs Docker) |
-| `make smoke` | Builds the test-tools image and runs `scripts/smoke.py` (needs Docker) |
+| `mise run test` | Python unit tests, and runs `welcome.go` to check the static flag |
+| `mise run package` | Builds the archives into `dist/` |
+| `mise run build` | Builds the dynamic image as `cybericebox/test-exercises:local` (needs Docker) |
+| `mise run smoke` | Builds the test-tools image and runs `scripts/smoke.py` (needs Docker) |
 
-`make test` needs Python 3 and Go.
+`mise run test` needs Python 3 and Go.
 
 ## Releases
 
