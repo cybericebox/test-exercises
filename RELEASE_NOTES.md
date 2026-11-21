@@ -1,10 +1,10 @@
-Тестові завдання «Загублений пакет» та «Журнал зв’язку».
+Test tasks «Загублений пакет» (static) and «Журнал зв’язку» (dynamic).
 
-- Статичний Go-файл: відновлення фіксованого прапора за допомогою XOR; маска та функція відновлення є у вкладенні.
-- Дві вебсторінки: журнал повідомлень і картка передачі Р-17. Завантажте пакет та відновіть повідомлення з Base64.
-- Незалежні шаблонні прапори вебу та SSH; значення платформа передає під час запуску.
-- Веб через проксі або VPN, SSH через VPN, інтернет через шлюз Laboratory.
-- Архіви імпорту `static.zip`, `dynamic.zip`, спільний `test-exercises.zip` та `SHA256SUMS`.
-- Образ `cybericebox/test-exercises:v1.0.0` для `linux/amd64` та `linux/arm64`; також тег `latest`.
+- Static Go file: a fixed flag restored with XOR; the mask and the restore function are in the attachment.
+- Two web pages: a message log and the card of transmission Р-17. Download the packet and restore the message from Base64.
+- Independent template flags for the web part and for SSH; the platform passes the values at start.
+- Web through the proxy or the VPN, SSH through the VPN, internet through the Laboratory gateway.
+- Import archives `static.zip`, `dynamic.zip`, the combined `test-exercises.zip` and `SHA256SUMS`.
+- Image `cybericebox/test-exercises:v1.0.0` for `linux/amd64` and `linux/arm64`; the tag `latest` too.
 
-За погодженням власника цей випуск замінює початкову збірку під тими самими тегами. Перевірено валідатором daemon v2.5.0 і мережевим тестом зі справжнім WireGuard, HTTP-проксі та SSH. Виробничий захід цим релізом не розгортається.
+With the owner's agreement this release replaces the first build under the same tags. Checked with the validator of daemon v2.5.0 and with the network test over a real WireGuard tunnel, the HTTP proxy and SSH. No production event is deployed by this release.
