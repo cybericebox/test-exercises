@@ -1,7 +1,7 @@
-FROM alpine:3.24@sha256:294b683cb724975bec92580e1e685676bd4b50bda910ddb8c51d4cabeaec77e6 AS test-tools
+FROM alpine:3.24@sha256:f59abe656b692d901e184be3445e084786602108599d2a51d229c0f5a48c71bf AS test-tools
 RUN apk add --no-cache wireguard-tools iptables iproute2 curl openssh-client sshpass nginx
 
-FROM alpine:3.24@sha256:294b683cb724975bec92580e1e685676bd4b50bda910ddb8c51d4cabeaec77e6 AS runtime
+FROM alpine:3.24@sha256:f59abe656b692d901e184be3445e084786602108599d2a51d229c0f5a48c71bf AS runtime
 RUN apk add --no-cache nginx openssh-server python3 curl iproute2 ca-certificates \
  && adduser -D -u 1000 -s /bin/ash demo \
  && echo 'demo:cybericebox' | chpasswd \
