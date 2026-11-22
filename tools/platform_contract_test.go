@@ -2,9 +2,9 @@ package exercise_test
 
 import (
 	"encoding/json"
-	model "github.com/cybericebox/daemon/internal/model/exercise"
-	"github.com/cybericebox/daemon/internal/model/flagpattern"
-	codec "github.com/cybericebox/daemon/internal/useCase/exercise"
+	model "github.com/cybericebox/backend/internal/model/exercise"
+	"github.com/cybericebox/backend/internal/model/flagpattern"
+	codec "github.com/cybericebox/backend/internal/useCase/exercise"
 	"math/big"
 	"os"
 	"path/filepath"
