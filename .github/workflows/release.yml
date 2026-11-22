@@ -18,10 +18,10 @@ jobs:
       - run: "mise run test ::: package"
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
-          repository: cybericebox/daemon
+          repository: cybericebox/backend
           ref: e5a275ca0afac653d92b7f436be6d6e7da4ccb98
           path: _platform
-      - run: DAEMON_SOURCE="$GITHUB_WORKSPACE/_platform" bash tools/validate-platform.sh
+      - run: BACKEND_SOURCE="$GITHUB_WORKSPACE/_platform" bash tools/validate-platform.sh
       - name: Check release image pin
         if: startsWith(github.ref, 'refs/tags/')
         env:
